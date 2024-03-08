@@ -3,7 +3,7 @@ import numpy as np
 from rdkit.Chem import AllChem
 from rdkit import Chem
 from collections import defaultdict
-f"./original_datasets/{dataset}/{dataset}_train"
+
 
 def load_data(dataset, device):
 
