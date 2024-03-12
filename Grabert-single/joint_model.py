@@ -17,7 +17,7 @@ import time
 from tqdm import tqdm
 
 import graph_models
-import seq_models
+from seq_models import Smiles_BERT, BERT_base
 import models
 
 
@@ -33,6 +33,8 @@ class Model(nn.Module):
         self.input_dim_test = args[6]
         self.latent_size = 1
         self.hidden_size = 64
+        self.Smiles_vocab = args[7]
+        self.bert_params = args[8]
 
         self.graph = args[0][0]
         self.sequence = args[0][1]
@@ -40,10 +42,13 @@ class Model(nn.Module):
 
         self.graph_pretrain = graph_models.Graph_SageMLP(in_channels=self.input_dim_train, hidden_channels=64, out_channels=64)
 
-        #self.VAE = seq_models.VAE(args)
+        self.seq_model = Smiles_BERT(len(self.Smiles_vocab), max_len=256, nhead=16, feature_dim=1024, feedforward_dim=1024, nlayers=8, dropout_rate=self.bert_params['dropout'],adj=True)
+        self.seq_model.load_state_dict(torch.load('saved_models/pretrained.pt', map_location=self.device), strict=False)
+        self.seq_pretrain = BERT_base(self.seq_model)  
 
         self.AtomEmbedding = nn.Embedding(self.input_dim_train,
                                           self.hidden_size).to(self.device)
+        
         self.AtomEmbedding.weight.requires_grad = True
 
         self.output_layer = models.classifier(self.latent_size, self.device)
@@ -58,22 +63,26 @@ class Model(nn.Module):
 
 
 
-    def train(self,data, epoch):
-
-        nodes_emb = self.AtomEmbedding(data.x.long())
+    def train(self,graph_data,seq_data, epoch):
+        seq_data = {key:value.to(self.device) for key, value in seq_data.items()}
+        nodes_emb = self.AtomEmbedding(graph_data.x.long())
+        #print('Nodes embeddings:',nodes_emb)
 
         if self.graph:
-            nodes_emb = self.graph_pretrain(data.x,data.edge_index)
+            nodes_emb = self.graph_pretrain(graph_data.x,graph_data.edge_index)
             graph_emb = nodes_emb
-            #print("graph",graph_emb)
-            #print('Graph embeddings',graph_emb.shape)
+            print("graph",graph_emb)
+            print('Graph embeddings',graph_emb.shape)
+            print('graphsum',torch.sum(graph_emb,dim=0,keepdim=True)/graph_emb.shape[0])
             #print(nodes_emb)
             #print('Nodes format:',type(nodes_emb),"\n")
 
         if self.sequence:
-            #recons_loss, nodes_emb = self.VAE(nodes_emb, epoch)
+            position_num = torch.arange(256).repeat(seq_data["smiles_bert_input"].size(0),1).to(self.device)
+
+            nodes_emb = self.seq_pretrain.forward(seq_data["smiles_bert_input"], position_num, adj_mask=seq_data["smiles_bert_adj_mask"], adj_mat=seq_data["smiles_bert_adjmat"])
             seq_emb = nodes_emb
-            #print("seq",seq_emb.shape)
+            print("seq",seq_emb,seq_emb.shape)
 
         if self.use_fusion:
             molecule_emb = F.normalize(torch.mean(graph_emb, dim=0, keepdim=True), p=2, dim=1) + F.normalize(torch.mean(seq_emb, dim=0, keepdim=True), p=2, dim=1)
@@ -81,13 +90,17 @@ class Model(nn.Module):
             molecule_emb = torch.mean(nodes_emb, dim=0, keepdim=True)
         
 
-        #print('Molecule embeddings:',molecule_emb.shape)
+        print('Molecule embeddings:',molecule_emb)
+        print('Molecule embeddings shape:',molecule_emb.shape)
 
         pred = self.output_layer(molecule_emb)[0]
+        print('Prediction:',pred.shape)
         
 
-        label = torch.FloatTensor([int(data.y.view(-1, 1)[0])]).to(self.device)
-        #print('Label:',label , 'Prediction:',pred)
+        label = torch.FloatTensor([int(graph_data.y.view(-1, 1)[0])]).to(self.device)
+        #label=(seq_data["smiles_bert_label"].double()[0]).to(self.device)
+        print(graph_data.y)
+        print('Label:',label , 'Prediction:',pred)
 
         self.optimizer.zero_grad()
 
@@ -98,16 +111,18 @@ class Model(nn.Module):
 
         return loss, pred
 
-    def test(self, data, epoch):
+    def test(self, graph_data,seq_data, epoch):
 
-        nodes_emb = self.AtomEmbedding(data.x.long())
+        nodes_emb = self.AtomEmbedding(graph_data.x.long())
 
         if self.graph:
-            nodes_emb = self.graph_pretrain(data.x,data.edge_index)
+            nodes_emb = self.graph_pretrain(graph_data.x,graph_data.edge_index)
             graph_emb = nodes_emb
 
         if self.sequence:
-            #nodes_emb = self.VAE.test_vae(nodes_emb)
+            position_num = torch.arange(256).repeat(seq_data["smiles_bert_input"].size(0),1).to(self.device)
+
+            nodes_emb = self.seq_pretrain.forward(seq_data["smiles_bert_input"], position_num, adj_mask=seq_data["smiles_bert_adj_mask"], adj_mat=seq_data["smiles_bert_adjmat"])
             seq_emb = nodes_emb
 
         if self.use_fusion:
@@ -115,6 +130,6 @@ class Model(nn.Module):
         else:
             molecule_emb = torch.mean(nodes_emb, dim=0, keepdim=True)
 
-        pred = self.output_layer(molecule_emb)
+        pred = self.output_layer(molecule_emb)[0]
 
         return pred

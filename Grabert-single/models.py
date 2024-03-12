@@ -17,22 +17,45 @@ def weights_init(m):
         m.bias.data.fill_(0)
 
 
+# class classifier(nn.Module):
+
+#     def __init__(self, latent_size, device):
+#         super(classifier,self).__init__()
+
+#         self.latent_size = 64
+
+#         self.classifier = nn.Sequential(nn.Linear(self.latent_size,64 ),
+#                                         nn.ReLU(),
+#                                         nn.Linear(64, 1),
+                                        
+#                                         )
+        
+#         self.apply(weights_init)
+#         self.to(device)
+
+#     def forward(self, x):
+
+#         out = self.classifier(x)
+#         return out
+
 class classifier(nn.Module):
 
     def __init__(self, latent_size, device):
         super(classifier,self).__init__()
 
-        self.latent_size = latent_size
+        self.latent_size = 64
 
-        self.classifier = nn.Sequential(nn.Linear(self.latent_size, 16),
+        self.classifier = nn.Sequential(nn.Linear(256 * self.latent_size, 64),
                                         nn.ReLU(),
-                                        nn.Linear(16, 1),
+                                        nn.Linear(64, 1),
+                                        nn.Sigmoid()
                                         )
         
         self.apply(weights_init)
         self.to(device)
 
     def forward(self, x):
-
+        x = x.view(x.size(0), -1)  # Flatten the tensor
         out = self.classifier(x)
+        out = torch.mean(out, dim=0, keepdim=True)  # Aggregate the outputs into a single value
         return out
