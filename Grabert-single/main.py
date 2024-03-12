@@ -38,7 +38,7 @@ def main(option,d_name):
     if torch.cuda.is_available() == False:
         torch.set_num_threads(24)
 
-    bert_params = {'batch_size':1, 'dropout':0, 'learning_rate':0.00001, 'epoch':1, 'optimizer':'Adam', 'model':'Transformer'}
+    bert_params = {'batch_size':1, 'dropout':0, 'learning_rate':0.00001, 'optimizer':'Adam', 'model':'Transformer'}
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -99,24 +99,27 @@ def main(option,d_name):
     num_epochs=1
     correct_predictions = 0
     total_predictions = 0
-    losses = 0
+    losses = 0.0
+    c=0
 
     for epoch in range(num_epochs):
         losses=0.0
         for graph_data,seq_data in zip(train_loader,train_dataloader):
-            print('graph',graph_data.y,'bert',seq_data["smiles_bert_label"].double())
+
+            print('\n data:',c)
+            c+=1
             loss, output = model.train(graph_data,seq_data, epoch)  
             print('output:',output)
             losses += loss.item()
 
             # Convert model output to predicted labels
-            predicted_labels = torch.round(output).detach()  # Assuming binary classification
-            target = seq_data["smiles_bert_label"].double()
+            predicted_labels = torch.round(output).detach()
+            target = graph_data.y.double()
             print('Prediction:',predicted_labels,'Target',target)
             # Compare with actual labels
             correct_predictions += (predicted_labels == target).sum().item()
             total_predictions += graph_data.y.size(0)
-            print('correct_predictions:',correct_predictions)
+            print('\n correct_predictions:',correct_predictions)
             print('total_predictions:',total_predictions)   
 
         accuracy = correct_predictions / total_predictions

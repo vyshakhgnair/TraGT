@@ -71,9 +71,9 @@ class Model(nn.Module):
         if self.graph:
             nodes_emb = self.graph_pretrain(graph_data.x,graph_data.edge_index)
             graph_emb = nodes_emb
-            print("graph",graph_emb)
-            print('Graph embeddings',graph_emb.shape)
-            print('graphsum',torch.sum(graph_emb,dim=0,keepdim=True)/graph_emb.shape[0])
+            #print("graph",graph_emb)
+            #print('Graph embeddings',graph_emb.shape)
+            #print('graphsum',torch.sum(graph_emb,dim=0,keepdim=True)/graph_emb.shape[0])
             #print(nodes_emb)
             #print('Nodes format:',type(nodes_emb),"\n")
 
@@ -82,7 +82,8 @@ class Model(nn.Module):
 
             nodes_emb = self.seq_pretrain.forward(seq_data["smiles_bert_input"], position_num, adj_mask=seq_data["smiles_bert_adj_mask"], adj_mat=seq_data["smiles_bert_adjmat"])
             seq_emb = nodes_emb
-            print("seq",seq_emb,seq_emb.shape)
+            
+            #print("seq",seq_emb,seq_emb.shape)
 
         if self.use_fusion:
             molecule_emb = F.normalize(torch.mean(graph_emb, dim=0, keepdim=True), p=2, dim=1) + F.normalize(torch.mean(seq_emb, dim=0, keepdim=True), p=2, dim=1)
@@ -90,16 +91,15 @@ class Model(nn.Module):
             molecule_emb = torch.mean(nodes_emb, dim=0, keepdim=True)
         
 
-        print('Molecule embeddings:',molecule_emb)
+        #print('Molecule embeddings:',molecule_emb)
         print('Molecule embeddings shape:',molecule_emb.shape)
 
         pred = self.output_layer(molecule_emb)[0]
-        print('Prediction:',pred.shape)
+        print('Prediction:',pred)
         
 
         label = torch.FloatTensor([int(graph_data.y.view(-1, 1)[0])]).to(self.device)
         #label=(seq_data["smiles_bert_label"].double()[0]).to(self.device)
-        print(graph_data.y)
         print('Label:',label , 'Prediction:',pred)
 
         self.optimizer.zero_grad()

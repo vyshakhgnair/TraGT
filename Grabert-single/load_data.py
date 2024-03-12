@@ -184,10 +184,10 @@ def load_data(dataset, device):
     print(te_len)
 
     node2index = {n: i for i, n in enumerate(node_types)}
-    label2index = {l: i for i, l in enumerate(label_types)}
+    label2index = {l: int(l) for i, l in enumerate(label_types)}
 
     #print(node2index)
-    #print(label2index)
+    print(label2index)
 
     data_file = f"./original_datasets/{dataset}/{dataset}_train"
     file = open(data_file, "r")
@@ -223,13 +223,14 @@ def load_data(dataset, device):
                 adj_list[i].append(j)
                 adj_list[j].append(i)
 
-        train_labels[len(train_adjlists)]= int(label2index[label])
+        train_labels[len(train_adjlists)] = int(label2index[label])
+        #print(train_labels)
         train_adjlists.append(adj_list)
         train_features.append(torch.FloatTensor(feature).to(device))
         train_sequence.append(torch.tensor(smiles_seq))
     file.close()
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_train"
+    data_file = f"./original_datasets/{dataset}/{dataset}_test"
     file = open(data_file, "r")
     test_adjlists = []
     test_features = []
@@ -264,6 +265,7 @@ def load_data(dataset, device):
                 adj_list[j].append(i)
 
         test_labels[len(test_adjlists)] = int(label2index[label])
+        
         test_adjlists.append(adj_list)
         test_features.append(torch.FloatTensor(feature).to(device))
         test_sequence.append(torch.tensor(smiles_seq))
