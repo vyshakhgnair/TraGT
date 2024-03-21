@@ -17,45 +17,48 @@ def weights_init(m):
         m.bias.data.fill_(0)
 
 
-# class classifier(nn.Module):
+class classifier_graph(nn.Module):
 
-#     def __init__(self, latent_size, device):
-#         super(classifier,self).__init__()
+    def __init__(self, latent_size, device):
+        super(classifier_graph,self).__init__()
 
-#         self.latent_size = 64
+        self.latent_size = 64
+        self.out_channels = 64
 
-#         self.classifier = nn.Sequential(nn.Linear(self.latent_size,64 ),
-#                                         nn.ReLU(),
-#                                         nn.Linear(64, 1),
-                                        
-#                                         )
+        self.mlp = nn.Sequential(
+            nn.Linear(self.out_channels, 64),
+            nn.ReLU(),
+            nn.Linear(64, 1),
+            nn.Sigmoid()
+        )
         
-#         self.apply(weights_init)
-#         self.to(device)
+        self.apply(weights_init)
+        self.to(device)
 
-#     def forward(self, x):
+    def forward(self, x):
 
-#         out = self.classifier(x)
-#         return out
+        out = self.mlp(x)
+        return out
+    
+
 
 class classifier(nn.Module):
 
     def __init__(self, latent_size, device):
         super(classifier,self).__init__()
 
-        self.latent_size = 64
+        self.latent_size =  1                           
 
-        self.classifier = nn.Sequential(nn.Linear(256 * self.latent_size, 64),
+        self.classifier = nn.Sequential(nn.Linear(64 , self.latent_size),
                                         nn.ReLU(),
-                                        nn.Linear(64, 1),
+                                        nn.Linear(1,self.latent_size),
                                         nn.Sigmoid()
                                         )
-        
         self.apply(weights_init)
         self.to(device)
 
     def forward(self, x):
-        x = x.view(x.size(0), -1)  # Flatten the tensor
         out = self.classifier(x)
-        out = torch.mean(out, dim=0, keepdim=True)  # Aggregate the outputs into a single value
+        #print(out,out.shape)
         return out
+    

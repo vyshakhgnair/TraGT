@@ -89,99 +89,99 @@ def main(option,d_name):
 
     args=[option,device,train_loader,test_loader,learning_rate,input_dim_train,input_dim_test,Smiles_vocab,bert_params]
 
-    #model = Graph_SageMLP(in_channels=input_dim_train, hidden_channels=64, out_channels=64)
+
     model=Model(args)
     model.to(device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.BCEWithLogitsLoss()
     
-    num_epochs=1
+    num_epochs=50
     correct_predictions = 0
     total_predictions = 0
     losses = 0.0
     c=0
-
     for epoch in range(num_epochs):
-        losses=0.0
-        for graph_data,seq_data in zip(train_loader,train_dataloader):
-
-            print('\n data:',c)
-            c+=1
-            loss, output = model.train(graph_data,seq_data, epoch)  
-            print('output:',output)
+        losses = 0.0
+        correct_predictions = 0
+        total_predictions = 0
+        
+        for graph_data, seq_data in zip(train_loader, train_dataloader):
+            loss, output = model.train(graph_data, seq_data, epoch)
             losses += loss.item()
-
+            
             # Convert model output to predicted labels
-            predicted_labels = torch.round(output).detach()
+            predicted_labels = abs(torch.round(output).detach())
             target = graph_data.y.double()
-            print('Prediction:',predicted_labels,'Target',target)
+            
             # Compare with actual labels
             correct_predictions += (predicted_labels == target).sum().item()
             total_predictions += graph_data.y.size(0)
-            print('\n correct_predictions:',correct_predictions)
-            print('total_predictions:',total_predictions)   
-
-        accuracy = correct_predictions / total_predictions
-        print(f'Epoch {epoch + 1}/{num_epochs}, Loss: {losses:.4f}, Accuracy: {accuracy:.4f}')
-        test_correct=0
-        test_total=0
-        print('Evaluating on test set... \n')
-        for graph_data,seq_data in zip(test_loader,test_dataloader):
+        
+        train_accuracy = correct_predictions / total_predictions
+        print(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {train_accuracy:.4f}')
+        
+        # Evaluation on test set
+        test_correct = 0
+        test_total = 0
+        
+        for graph_data, seq_data in zip(test_loader, test_dataloader):
             with torch.no_grad():
-                predictions=[]
-                true_labels=[]
-                output = model.test(graph_data,seq_data, epoch)
-                predicted_labels = torch.round(output).detach()  # Assuming binary classification
+                predictions = []
+                true_labels = []
+                output = model.test(graph_data, seq_data, epoch)
+                predicted_labels = torch.round(output).detach()
                 target = seq_data["smiles_bert_label"].double()
-                test_correct+=(predicted_labels == target).sum().item()
-                test_total+=1
-        print(test_correct,test_total)
-        epoch_accuracy=test_correct/test_total
-        #epoch_accuracy = accuracy_score(np.round(predictions), true_labels)
-        print(f'Epoch {epoch + 1}/{num_epochs}, Accuracy: {epoch_accuracy:.4f}')
-
-
-
-
-    
-
-    # # Training loop
-    # num_epochs = 1
+                test_correct += (predicted_labels == target).sum().item()
+                test_total += 1
+        
+        test_accuracy = test_correct / test_total
+        print(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {test_accuracy:.4f}')
     # for epoch in range(num_epochs):
-    #     model.train()
-    #     for data in train_loader:
-    #         #print(data)
-    #         #print(data.x)
-    #         #print(data.edge_index)
-    #         optimizer.zero_grad()
-    #         output = model(data.x, data.edge_index)
-    #         #print(torch.LongTensor([int(data.y.view(-1, 1)[0])]))
-    #         print(output)
-    #         loss = criterion(output, data.y.view(-1, 1))
-    #         loss.backward()
-    #         optimizer.step()
+    #     losses=0.0
+    #     for graph_data,seq_data in zip(train_loader,train_dataloader):
 
-    #     # Evaluate accuracy on training set
-    #     logp_sage_train_accuracy = []  
+    #         print('\n data:',c)
+    #         c+=1
+    #         loss, output = model.train(graph_data,seq_data, epoch)  
+    #         print('output:',output)
+    #         losses += loss.item()
+    #         # Convert model output to predicted labels
+    #         predicted_labels = abs(torch.round(output).detach())
+    #         target = graph_data.y.double()
+    #         print('Prediction:',predicted_labels,'Target',target)
+    #         # Compare with actual labels
+    #         correct_predictions += (predicted_labels == target).sum().item()
+    #         total_predictions += graph_data.y.size(0)
+    #         #print('\n correct_predictions:',correct_predictions)
+    #         #print('total_predictions:',total_predictions)   
 
-    #     model.eval()
-    #     with torch.no_grad():
-    #         predictions = []
-    #         true_labels = []
-    #         for data in train_loader:
-    #             output = model(data.x, data.edge_index)
-    #             predictions.extend(torch.sigmoid(output).cpu().numpy().flatten())
-    #             true_labels.extend(data.y.cpu().numpy())
+    #     accuracy = correct_predictions / total_predictions
+    #     print(f'Epoch {epoch + 1}/{num_epochs}, Loss: {losses:.4f}, Accuracy: {accuracy:.4f}')
+    #     test_correct=0
+    #     test_total=0
+    #     print('Evaluating on test set... \n')
+    #     for graph_data,seq_data in zip(test_loader,test_dataloader):
+    #         with torch.no_grad():
+    #             predictions=[]
+    #             true_labels=[]
+    #             output = model.test(graph_data,seq_data, epoch)
+    #             predicted_labels = torch.round(output).detach()  # Assuming binary classification
+    #             target = seq_data["smiles_bert_label"].double()
+    #             test_correct+=(predicted_labels == target).sum().item()
+    #             test_total+=1
+    #     print(test_correct,test_total)
+    #     epoch_accuracy=test_correct/test_total
+    #     #epoch_accuracy = accuracy_score(np.round(predictions), true_labels)
+    #     print(f'Epoch {epoch + 1}/{num_epochs}, Accuracy: {epoch_accuracy:.4f}')
 
-    #         epoch_accuracy = accuracy_score(np.round(predictions), true_labels)
-    #         logp_sage_train_accuracy.append(epoch_accuracy)
-    #         print(f'Epoch {epoch + 1}/{num_epochs}, Accuracy: {epoch_accuracy:.4f}')
 
 
 
 
 if __name__ == "__main__":
     option=[True,True,True]
+    #option=[True,False,False]
+    #option=[False,True,False]
     d_name='logp'
     main(option,d_name)

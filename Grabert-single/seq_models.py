@@ -57,10 +57,10 @@ class BERT_base(nn.Module):
 	def __init__(self, model):
 		super().__init__()
 		self.bert = model
-		self.linear = nn.Linear(1024, 64)
+		#self.linear = nn.Linear(1024, 64)
 	def forward(self, x, pos_num, adj_mask=None, adj_mat=None):
 		x = self.bert(x, pos_num, adj_mask, adj_mat)
-		x = self.linear(x)
+		#x = self.linear(x)
 		#print("after linear",x.shape)
 		return x
 
@@ -89,5 +89,5 @@ class Smiles_BERT(nn.Module):
 		#print("x after transformer_encoder",x.shape)
 
 		x = x.transpose(1,0)
-		#x = self.linear(x)
+
 		return x
