@@ -17,6 +17,7 @@ import torch.nn as nn
 from sklearn.metrics import accuracy_score
 import json
 from joint_model import Model
+import datetime
 
 
 def adj_list_to_adj_matrix(adj_list):
@@ -101,87 +102,62 @@ def main(option,d_name):
     total_predictions = 0
     losses = 0.0
     c=0
-    for epoch in range(num_epochs):
-        losses = 0.0
-        correct_predictions = 0
-        total_predictions = 0
-        
-        for graph_data, seq_data in zip(train_loader, train_dataloader):
-            loss, output = model.train(graph_data, seq_data, epoch)
-            losses += loss.item()
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name = f'train_accuracy_details_{current_time}.txt'
+    with open(file_name, 'a') as file:
+        for epoch in range(num_epochs):
+            losses = 0.0
+            correct_predictions = 0
+            total_predictions = 0
             
-            # Convert model output to predicted labels
-            predicted_labels = abs(torch.round(output).detach())
-            target = graph_data.y.double()
+            for graph_data, seq_data in zip(train_loader, train_dataloader):
+                loss, output = model.train(graph_data, seq_data, epoch)
+                losses += loss.item()
+                
+                # Convert model output to predicted labels
+                predicted_labels = abs(torch.round(output).detach())
+                target = graph_data.y.double()
+                #print('output:',output)
+                file.write(f'output:{output}\n')
+                #print('Prediction:',predicted_labels,'Target',target)
+                file.write(f'Prediction:{predicted_labels}, Target:{target}\n')
+                
+                # Compare with actual labels
+                correct_predictions += (predicted_labels == target).sum().item()
+                total_predictions += graph_data.y.size(0)
             
-            # Compare with actual labels
-            correct_predictions += (predicted_labels == target).sum().item()
-            total_predictions += graph_data.y.size(0)
+            train_accuracy = correct_predictions / total_predictions
+            print(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {train_accuracy:.4f}')
+            file.write(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {train_accuracy:.4f}\n')
         
-        train_accuracy = correct_predictions / total_predictions
-        print(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {train_accuracy:.4f}')
-        
-        # Evaluation on test set
-        test_correct = 0
-        test_total = 0
-        
+    # Evaluation on test set
+    test_correct = 0
+    test_total = 0
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name = f'test_accuracy_details_{current_time}.txt'
+
+    with open(file_name, 'a') as file:
         for graph_data, seq_data in zip(test_loader, test_dataloader):
             with torch.no_grad():
-                predictions = []
-                true_labels = []
                 output = model.test(graph_data, seq_data, epoch)
                 predicted_labels = torch.round(output).detach()
-                target = seq_data["smiles_bert_label"].double()
+                target = graph_data.y.double()
                 test_correct += (predicted_labels == target).sum().item()
-                test_total += 1
-        
-        test_accuracy = test_correct / test_total
-        print(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {test_accuracy:.4f}')
-    # for epoch in range(num_epochs):
-    #     losses=0.0
-    #     for graph_data,seq_data in zip(train_loader,train_dataloader):
+                test_total += graph_data.y.size(0)
+            
+            test_accuracy = test_correct / test_total
+            print(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {test_accuracy:.4f}')
+            file.write(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {test_accuracy:.4f}\n')    
 
-    #         print('\n data:',c)
-    #         c+=1
-    #         loss, output = model.train(graph_data,seq_data, epoch)  
-    #         print('output:',output)
-    #         losses += loss.item()
-    #         # Convert model output to predicted labels
-    #         predicted_labels = abs(torch.round(output).detach())
-    #         target = graph_data.y.double()
-    #         print('Prediction:',predicted_labels,'Target',target)
-    #         # Compare with actual labels
-    #         correct_predictions += (predicted_labels == target).sum().item()
-    #         total_predictions += graph_data.y.size(0)
-    #         #print('\n correct_predictions:',correct_predictions)
-    #         #print('total_predictions:',total_predictions)   
 
-    #     accuracy = correct_predictions / total_predictions
-    #     print(f'Epoch {epoch + 1}/{num_epochs}, Loss: {losses:.4f}, Accuracy: {accuracy:.4f}')
-    #     test_correct=0
-    #     test_total=0
-    #     print('Evaluating on test set... \n')
-    #     for graph_data,seq_data in zip(test_loader,test_dataloader):
-    #         with torch.no_grad():
-    #             predictions=[]
-    #             true_labels=[]
-    #             output = model.test(graph_data,seq_data, epoch)
-    #             predicted_labels = torch.round(output).detach()  # Assuming binary classification
-    #             target = seq_data["smiles_bert_label"].double()
-    #             test_correct+=(predicted_labels == target).sum().item()
-    #             test_total+=1
-    #     print(test_correct,test_total)
-    #     epoch_accuracy=test_correct/test_total
-    #     #epoch_accuracy = accuracy_score(np.round(predictions), true_labels)
-    #     print(f'Epoch {epoch + 1}/{num_epochs}, Accuracy: {epoch_accuracy:.4f}')
 
 
 
 
 
 if __name__ == "__main__":
-    option=[True,True,True]
+    #option=[True,True,True]
     #option=[True,False,False]
-    #option=[False,True,False]
+    option=[False,True,False]
     d_name='logp'
     main(option,d_name)

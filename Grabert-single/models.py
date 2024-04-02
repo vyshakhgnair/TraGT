@@ -47,18 +47,18 @@ class classifier(nn.Module):
     def __init__(self, latent_size, device):
         super(classifier,self).__init__()
 
-        self.latent_size =  1                           
+        self.latent_size =  1024                           
 
-        self.classifier = nn.Sequential(nn.Linear(64 , self.latent_size),
+        self.classifier = nn.Sequential(nn.Linear(self.latent_size,1024),
                                         nn.ReLU(),
-                                        nn.Linear(1,self.latent_size),
-                                        nn.Sigmoid()
-                                        )
+                                        nn.Linear(self.latent_size,1),
+                                        nn.Sigmoid(),)
         self.apply(weights_init)
         self.to(device)
 
     def forward(self, x):
         out = self.classifier(x)
+        #print(out,out.shape)
         #print(out,out.shape)
         return out
     

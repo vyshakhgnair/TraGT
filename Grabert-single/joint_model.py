@@ -106,8 +106,7 @@ class Model(nn.Module):
         else:
             #print('Output layer')
             pred = self.output_layer(molecule_emb)[0]
-            pred = torch.mean(pred,dim=0,keepdim=True)
-            #print(pred)
+            pred = torch.mean(pred,dim=0,keepdim=True)[0]
 
         
 
@@ -115,6 +114,7 @@ class Model(nn.Module):
         #pred = abs(torch.round(pred).detach())
         #print('Label:',label , 'Prediction:',pred)
 
+        #print(pred,pred.shape)
         self.optimizer.zero_grad()
         
 
@@ -126,27 +126,43 @@ class Model(nn.Module):
         return loss, pred
 
     def test(self, graph_data,seq_data, epoch):
-
+        seq_data = {key:value.to(self.device) for key, value in seq_data.items()}
         nodes_emb = self.AtomEmbedding(graph_data.x.long())
+        
 
         if self.graph:
             nodes_emb = self.graph_pretrain(graph_data.x,graph_data.edge_index)
             graph_emb = nodes_emb
+
 
         if self.sequence:
             position_num = torch.arange(256).repeat(seq_data["smiles_bert_input"].size(0),1).to(self.device)
 
             nodes_emb = self.seq_pretrain.forward(seq_data["smiles_bert_input"], position_num, adj_mask=seq_data["smiles_bert_adj_mask"], adj_mat=seq_data["smiles_bert_adjmat"])
             seq_emb = nodes_emb
+            
+            
 
         if self.use_fusion:
-            molecule_emb = F.normalize(torch.mean(graph_emb, dim=0, keepdim=True), p=2, dim=1) + F.normalize(torch.mean(seq_emb, dim=0, keepdim=True), p=2, dim=1)
+            projection = nn.Linear(1024, 64)
+            seq_emb = projection(seq_emb.squeeze(0)) 
+            seq_emb = torch.mean(seq_emb, dim=0)
+            graph_emb = torch.mean(graph_emb, dim=0)
+            molecule_emb = torch.cat((seq_emb.unsqueeze(0),graph_emb.unsqueeze(0)), dim=0)
+
+
+            #molecule_emb = F.normalize(torch.mean(graph_emb, dim=0, keepdim=True), p=2, dim=1) + F.normalize(torch.mean(seq_emb, dim=0, keepdim=True), p=2, dim=1)
         else:
             molecule_emb = torch.mean(nodes_emb, dim=0, keepdim=True)
+        
+
 
         if self.use_fusion==False and self.sequence==False:
+            #print('Custom output layer')
             pred = self.custom_output_layer(molecule_emb)[0]
         else:
+            #print('Output layer')
             pred = self.output_layer(molecule_emb)[0]
+            pred = torch.mean(pred,dim=0,keepdim=True)
 
         return pred
