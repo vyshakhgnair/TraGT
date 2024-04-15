@@ -1,160 +1,52 @@
-import copy
-import torch
-from torch.autograd import Variable
-import torch.backends.cudnn as cudnn
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.autograd as autograd
-from torch.utils import data
-
-import pickle
-import random
-import numpy as np
+# import torch
+# import torch.nn as nn
+# from seq_models import TransformerModel
+# from graph_models import Graph_Transformer
+# from fusion_model import FusionModel
 
 
-import time
-from tqdm import tqdm
-
-import graph_models
-from seq_models import TransformerModel
-from models import FusionLayer, classifier
-
-
-class Model(nn.Module):
-    def __init__(self, args):
-        super(Model,self).__init__()
-
-        self.device = args[1]
-        self.train_data = args[2]
-        self.test_data = args[3]
-        self.learning_rate = args[4]
-        self.input_dim_train = args[5]
-        self.input_dim_test = args[6]
-        self.latent_size = 64
-        self.hidden_size = 64
-        self.intermediate_size = 64
-
-
-        self.graph = args[0][0]
-        self.sequence = args[0][1]
-        self.use_fusion = args[0][2]
-
-        # Define transformer parameters
-        vocab_size = 100
-        d_model = 128
-        nhead = 4
-        num_encoder_layers = 3
-        dim_feedforward = 512
-        max_length = 100
-        batch_size = 2
-        num_epochs = 100
-
-
-        self.graph_pretrain = graph_models.Graph_Transformer(in_channels=self.input_dim_train, hidden_channels=self.hidden_size, out_channels=self.latent_size, heads=4)
+# class Model(torch.nn.Module):
+#     def __init__(self, args):
+#         super(Model, self).__init__()
+#         self.option=args[0]
+#         self.graph=args[0][0]
+#         self.sequence=args[0][1]
+#         self.fusion=args[0][2]
+#         self.device=args[1]
+#         self.train_dataset=args[2]
+#         self.test_dataset=args[3]
+#         self.learning_rate=args[4]
+#         self.input_dim_train=args[5]
+#         self.input_dim_test=args[6]
         
-        self.seq_pretrain = TransformerModel(vocab_size, d_model, nhead, num_encoder_layers, dim_feedforward,self.latent_size, max_length)
+#         vocab_size = 100
+#         d_model = 100
+#         nhead = 4
+#         num_encoder_layers = 3
+#         dim_feedforward = 512
 
-        self.AtomEmbedding = nn.Embedding(self.input_dim_train,
-                                          self.hidden_size).to(self.device)
+#         self.graph_model = Graph_Transformer(in_channels=self.input_dim_train, hidden_channels=64, out_channels=1, heads=4)
+#         self.sequence_model = TransformerModel(vocab_size, d_model, nhead, num_encoder_layers, dim_feedforward)
+#         self.fusion_model = FusionModel(self.graph_model, self.sequence_model)
+#         self.optimizer = torch.optim.Adam(self.fusion_model.parameters(), lr=self.learning_rate)
+#         self.loss_fn = nn.BCEWithLogitsLoss()
         
-        self.AtomEmbedding.weight.requires_grad = True
-
-
-        self.output_layer = classifier(self.latent_size, self.device)
-
-
-        self.label_criterion = nn.BCEWithLogitsLoss()
-
-
-        self.optimizer  = optim.Adam(self.parameters(),
-                                     lr=self.learning_rate,
-                                     weight_decay=1e-8,
-                                     amsgrad=True)
+#     def train(self, graph_data, sequence_data):
+#         if self.graph:
+#             graph_embedding = self.graph_model(graph_data)
+#             output = graph_embedding
         
+#         if self.sequence:
+#             sequence_embedding = self.sequence_model(sequence_data)
+#             output = sequence_embedding
         
+#         if self.fusion:
+#             output = self.fusion_model(graph_data, sequence_data)
 
 
-
-    def train(self,graph_data,seq_data, epoch):
-        nodes_emb = self.AtomEmbedding(graph_data.x.long())
+#         loss = self.loss_fn(output, graph_data.y.view(-1, 1))
         
-
-        if self.graph:
-            nodes_emb = self.graph_pretrain(graph_data)
-            graph_emb = nodes_emb
-            #print('Graph embedding:',graph_emb.shape)
-
-
-        if self.sequence:
-
-            nodes_emb = self.seq_pretrain(seq_data[0])
-            seq_emb = nodes_emb
-            #print('Sequence embedding:',seq_emb.shape)
-            
-            
-
-        if self.use_fusion:
-            self.intermediate_size= 64
-            self.fusion_layer= FusionLayer(self.intermediate_size)
-            pred=self.fusion_layer(graph_emb,seq_emb)[0]
-
-
+#         loss.backward()
         
-
-        label = torch.FloatTensor([int(graph_data.y.view(-1, 1)[0])]).to(self.device)
-        #pred = abs(torch.round(pred).detach())
-        #print('Label:',label , 'Prediction:',pred)
-
-        #print(pred,pred.shape)
-        self.optimizer.zero_grad()
-        
-
-        loss = self.label_criterion(pred, label)
-
-        loss.backward()
-        self.optimizer.step()
-
-        return loss, pred
-
-    def test(self, graph_data,seq_data, epoch):
-        seq_data = {key:value.to(self.device) for key, value in seq_data.items()}
-        nodes_emb = self.AtomEmbedding(graph_data.x.long())
-        
-
-        if self.graph:
-            nodes_emb = self.graph_pretrain(graph_data)
-            graph_emb = nodes_emb
-
-
-        if self.sequence:
-            position_num = torch.arange(256).repeat(seq_data["smiles_bert_input"].size(0),1).to(self.device)
-
-            nodes_emb = self.seq_pretrain.forward(seq_data["smiles_bert_input"], position_num, adj_mask=seq_data["smiles_bert_adj_mask"], adj_mat=seq_data["smiles_bert_adjmat"])
-            seq_emb = nodes_emb
-            
-            
-
-        if self.use_fusion:
-            projection = nn.Linear(1024, 64)
-            seq_emb = projection(seq_emb.squeeze(0)) 
-            seq_emb = torch.mean(seq_emb, dim=0)
-            graph_emb = torch.mean(graph_emb, dim=0)
-            molecule_emb = torch.cat((seq_emb.unsqueeze(0),graph_emb.unsqueeze(0)), dim=0)
-
-
-            #molecule_emb = F.normalize(torch.mean(graph_emb, dim=0, keepdim=True), p=2, dim=1) + F.normalize(torch.mean(seq_emb, dim=0, keepdim=True), p=2, dim=1)
-        else:
-            molecule_emb = torch.mean(nodes_emb, dim=0, keepdim=True)
-        
-
-
-        if self.use_fusion==False and self.sequence==False:
-            #print('Custom output layer')
-            pred = self.custom_output_layer(molecule_emb)[0]
-        else:
-            #print('Output layer')
-            pred = self.output_layer(molecule_emb)[0]
-            pred = torch.mean(pred,dim=0,keepdim=True)
-
-        return pred
+#         self.optimizer.step()
+#         return output, loss
