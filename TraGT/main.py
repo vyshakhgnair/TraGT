@@ -66,107 +66,129 @@ def main(data_name,options):
     session_name = f'{data_name}_{formatted_datetime}'
     folder_path = os.path.join('saved_models', session_name)
     os.makedirs(folder_path, exist_ok=True)
+    
+    output_dir_train = f'output/{data_name}/train'
+    os.makedirs(output_dir_train, exist_ok=True)
+    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name_train = f'{output_dir_train}/train_accuracy_details_{current_time}.txt'
+
+    output_dir_test = f'output/{data_name}/test'
+    os.makedirs(output_dir_test, exist_ok=True)
+    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name_test = f'{output_dir_test}/test_accuracy_details_{current_time}.txt'
 
 
     best_train_accuracy = 0.0
     best_test_accuracy=0.0
-    
     # Training loop
-    for epoch in range(100):
-        total_correct = 0
-        total_samples = 0
-        true_labels_train = []
-        pred_probs_train = []
-        for data_batch in train_dataset:
-            graph_data_batch = data_batch[0]
-            sequence_inputs  = data_batch[1]
-            sequence_targets=graph_data_batch.y
 
-            # Zero the gradients
-            optimizer.zero_grad()
+    with open(file_name_train, 'a') as file_train, open(file_name_test, 'a') as file_test:
+        for epoch in range(100):
+            total_correct = 0
+            total_samples = 0
+            true_labels_train = []
+            pred_probs_train = []
+            losses=0.0
 
-            # Forward pass
-            output = fusion_model(graph_data_batch, sequence_inputs)
+            for data_batch in train_dataset:
+                graph_data_batch = data_batch[0]
+                sequence_inputs  = data_batch[1]
+                sequence_targets=graph_data_batch.y
+
+                # Zero the gradients
+                optimizer.zero_grad()
+
+                # Forward pass
+                output = fusion_model(graph_data_batch, sequence_inputs)
+                
+                # Compute binary predictions
+                binary_predictions = (output >= 0.5).float()
+
+                # Compute batch accuracy
+                batch_correct = (binary_predictions == sequence_targets).sum().item()
+                total_correct += batch_correct
+                total_samples += 1
+
+                output = output.to(device)
+                sequence_targets = sequence_targets.view(-1, 1).to(device)
+                
+                true_labels_train.append(sequence_targets.cpu().numpy().reshape(-1))
+                pred_probs_train.append(output.detach().cpu().numpy())
+                
+                # Compute loss
+                loss = criterion(output, sequence_targets)
+                losses+=loss.item()
+
+                # Backward pass
+                loss.backward()
+
+                # Update weights
+                optimizer.step()
+
+
+            # Compute epoch accuracy
+            epoch_train_accuracy = (total_correct / total_samples)*100
+            print(f"Epoch {epoch+1}/{100}, Epoch Accuracy: {epoch_train_accuracy:.4f}")
             
-            # Compute binary predictions
-            binary_predictions = (output >= 0.5).float()
-
-            # Compute batch accuracy
-            batch_correct = (binary_predictions == sequence_targets).sum().item()
-            total_correct += batch_correct
-            total_samples += 1
-
-            output = output.to(device)
-            sequence_targets = sequence_targets.view(-1, 1).to(device)
+            if epoch_train_accuracy >= best_train_accuracy:
+                best_train_accuracy = epoch_train_accuracy
+                model_path = os.path.join(folder_path, f'train_best_model_{best_train_accuracy:.3f}.pth')
+                torch.save(fusion_model.state_dict(), model_path)
+                print("Saved model with accuracy train model with accuracy{:.2f}% to {}".format(best_train_accuracy, model_path))
             
-            true_labels_train.append(sequence_targets.cpu().numpy().reshape(-1))
-            pred_probs_train.append(output.detach().cpu().numpy())
-            
-            # Compute loss
-            loss = criterion(output, sequence_targets)
+            true_labels_train = np.concatenate(true_labels_train)
+            pred_probs_train = np.concatenate(pred_probs_train)
 
-            # Backward pass
-            loss.backward()
+            #print(true_labels_train,pred_probs_train)
 
-            # Update weights
-            optimizer.step()
-
-
-        # Compute epoch accuracy
-        epoch_train_accuracy = (total_correct / total_samples)*100
-        print(f"Epoch {epoch+1}/{100}, Epoch Accuracy: {epoch_train_accuracy:.4f}")
-        
-        if epoch_train_accuracy >= best_train_accuracy:
-            best_train_accuracy = epoch_train_accuracy
-            model_path = os.path.join(folder_path, f'train_best_model_{best_train_accuracy:.3f}.pth')
-            torch.save(fusion_model.state_dict(), model_path)
-            print("Saved model with accuracy train model with accuracy{:.2f}% to {}".format(best_train_accuracy, model_path))
-        
-        true_labels_train = np.concatenate(true_labels_train)
-        pred_probs_train = np.concatenate(pred_probs_train)
-
-        #print(true_labels_train,pred_probs_train)
-
-        auc_roc_train = roc_auc_score(true_labels_train, pred_probs_train)
-        f1_train = f1_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
-        print(f"Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f}\n")
-        
-        
-        total_correct = 0
-        total_samples = 0
-        true_labels_test = []
-        pred_probs_test = []
-        for data_batch in test_dataset:
-            graph_data_batch = data_batch[0]
-            sequence_inputs = data_batch[1]
-            sequence_targets = graph_data_batch.y
+            auc_roc_train = roc_auc_score(true_labels_train, pred_probs_train)
+            f1_train = f1_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
+            print(f"Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f}\n")
+            file_train.write(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {epoch_train_accuracy:.4f}, Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f}\n')
             
             
-            output = fusion_model(graph_data_batch, sequence_inputs)
-            binary_predictions = (output >= 0.5).float()
-            
-            
-            batch_correct = (binary_predictions == sequence_targets).sum().item()
-            total_correct += batch_correct
-            total_samples += 1
-            true_labels_test.append(sequence_targets.cpu().numpy().reshape(-1))
-            pred_probs_test.append(output.detach().cpu().numpy())
-        epoch_test_accuracy = (total_correct / total_samples)*100
-        print(f"Epoch Testing Accuracy : {epoch_test_accuracy:.4f}")
-        
-        if epoch_test_accuracy >= best_test_accuracy:
-            best_test_accuracy = epoch_test_accuracy
-            model_path = os.path.join(folder_path, f'test_best_model_{best_test_accuracy:.3f}.pth')
-            torch.save(fusion_model.state_dict(), model_path)
-            print("Saved model with Test Model with accuracy {:.2f}% to {}".format(best_test_accuracy, model_path))
-        
-        
-        true_labels_test = np.concatenate(true_labels_test)
-        pred_probs_test = np.concatenate(pred_probs_test)
-        auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
-        f1_test = f1_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
-        print(f"Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}\n")
 
+
+
+
+            total_correct = 0
+            total_samples = 0
+            true_labels_test = []
+            pred_probs_test = []
+            for data_batch in test_dataset:
+                graph_data_batch = data_batch[0]
+                sequence_inputs = data_batch[1]
+                sequence_targets = graph_data_batch.y
+                    
+                    
+                output = fusion_model(graph_data_batch, sequence_inputs)
+                binary_predictions = (output >= 0.5).float()
+                    
+                    
+                batch_correct = (binary_predictions == sequence_targets).sum().item()
+                total_correct += batch_correct
+                total_samples += 1
+                true_labels_test.append(sequence_targets.cpu().numpy().reshape(-1))
+                pred_probs_test.append(output.detach().cpu().numpy())
+                
+            epoch_test_accuracy = (total_correct / total_samples)*100
+            print(f"Epoch Testing Accuracy : {epoch_test_accuracy:.4f}")
+                
+            if epoch_test_accuracy >= best_test_accuracy:
+                best_test_accuracy = epoch_test_accuracy
+                model_path = os.path.join(folder_path, f'test_best_model_{best_test_accuracy:.3f}.pth')
+                torch.save(fusion_model.state_dict(), model_path)
+                print("Saved model with Test Model with accuracy {:.2f}% to {}".format(best_test_accuracy, model_path))
+            
+            
+            true_labels_test = np.concatenate(true_labels_test)
+            pred_probs_test = np.concatenate(pred_probs_test)
+            auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
+            f1_test = f1_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
+            print(f"Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}\n")
+            file_test.write(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {epoch_test_accuracy:.4f},Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f} \n')
+    file_test.close()
+    file_train.close()
             
     
 
