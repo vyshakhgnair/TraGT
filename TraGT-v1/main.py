@@ -53,6 +53,8 @@ logp_data_list_test = [Data(x=torch.tensor(features, dtype=torch.float),
                              y=torch.tensor(label, dtype=torch.float))
                         for features, adj_matrix, label in zip(test_data['features'], logp_adj_matrices_test, test_labels)]
 
+
+
 train_dataset = CustomDataset(logp_data_list_train, train_data['sequence'])
 test_dataset = CustomDataset(logp_data_list_test, test_data['sequence'])
 
@@ -115,39 +117,6 @@ num_epochs = 100
 # Define the reconstruction loss function
 reconstruction_criterion = nn.MSELoss()
 
-
-# class FusionModel(nn.Module):
-#     def __init__(self, graph_model, sequence_model):
-#         super(FusionModel, self).__init__()
-#         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-#         self.graph_model = graph_model
-#         self.sequence_model = sequence_model
-#         self.attention = nn.Linear(graph_model.linear.out_features + sequence_model.fc.out_features, 1)
-#         self.fusion_linear = nn.Linear(graph_model.linear.out_features + sequence_model.fc.out_features, 1)
-
-#     def forward(self, graph_data, sequence_data):
-#         # Move graph_data to device
-#         graph_data = graph_data.to(self.device)
-#         sequence_data=sequence_data.to(self.device)
-#         graph_embedding = self.graph_model(graph_data).to(self.device)
-
-#         # Move sequence_data to device
-#         #sequence_data = sequence_data.to(self.sequence_model.device)
-#         sequence_embedding = self.sequence_model(sequence_data).to(self.device)
-
-#         # Move sequence_embedding to the same device as graph_embedding
-#         #sequence_embedding = sequence_embedding.to(graph_embedding.device)
-
-#         sequence_embedding = sequence_embedding.unsqueeze(0).to(self.device)
-#         combined_embedding = torch.cat((graph_embedding, sequence_embedding), dim=1).to(self.device)
-#         attention_weights = torch.sigmoid(self.attention(combined_embedding)).to(self.device)
-#         weighted_sequence_embedding = (attention_weights * sequence_embedding).to(self.device)
-#         # Fusion
-#         fused_embedding = torch.cat((graph_embedding, weighted_sequence_embedding), dim=1).to(self.device)
-#         # Apply fusion layer
-#         output = self.fusion_linear(fused_embedding).to(self.device)
-#         return output
-
 import torch.nn.functional as F
 class FusionModel(nn.Module):
     def __init__(self, graph_model, sequence_model):
@@ -190,7 +159,7 @@ fusion_model = FusionModel(graph_model, sequence_model).to(device)
 
 criterion = nn.BCEWithLogitsLoss()
 #criterion = nn.BCELoss()
-optimizer = optim.Adam(fusion_model.parameters(), lr=0.0015)
+optimizer = optim.Adam(fusion_model.parameters(), lr=0.001)
 
 
 for epoch in range(num_epochs):
@@ -215,7 +184,7 @@ for epoch in range(num_epochs):
         total_samples += 1
         
         output = output.to(device)
-        sequence_targets = sequence_targets.view(-1, 1).to(device)
+        sequence_targets = sequence_targets.view(-1, 1).float().to(device)
         
         true_labels_train.append(sequence_targets.cpu().numpy())
         pred_probs_train.append(output.detach().cpu().numpy())
@@ -231,6 +200,7 @@ for epoch in range(num_epochs):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+        
     epoch_accuracy = total_correct / total_samples
     print(f"Epoch {epoch+1}/{num_epochs}, Epoch Training Accuracy: {epoch_accuracy:.4f} ",end='')
     true_labels_train = np.concatenate(true_labels_train)

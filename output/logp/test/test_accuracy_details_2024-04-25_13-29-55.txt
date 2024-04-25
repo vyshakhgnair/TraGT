@@ -1,0 +1,10 @@
+Epoch 1/100, Test Accuracy: 83.9000,Test AUC-ROC: 0.9449, Test F1 Score: 0.8156 
+Epoch 2/100, Test Accuracy: 86.5000,Test AUC-ROC: 0.9576, Test F1 Score: 0.8468 
+Epoch 3/100, Test Accuracy: 87.0000,Test AUC-ROC: 0.9595, Test F1 Score: 0.8549 
+Epoch 4/100, Test Accuracy: 87.0000,Test AUC-ROC: 0.9571, Test F1 Score: 0.8536 
+Epoch 5/100, Test Accuracy: 89.1000,Test AUC-ROC: 0.9633, Test F1 Score: 0.8798 
+Epoch 6/100, Test Accuracy: 87.9000,Test AUC-ROC: 0.9638, Test F1 Score: 0.8636 
+Epoch 7/100, Test Accuracy: 88.9000,Test AUC-ROC: 0.9662, Test F1 Score: 0.8765 
+Epoch 8/100, Test Accuracy: 87.9000,Test AUC-ROC: 0.9683, Test F1 Score: 0.8636 
+Epoch 9/100, Test Accuracy: 89.2000,Test AUC-ROC: 0.9726, Test F1 Score: 0.8789 
+Epoch 10/100, Test Accuracy: 85.4000,Test AUC-ROC: 0.9716, Test F1 Score: 0.8270 

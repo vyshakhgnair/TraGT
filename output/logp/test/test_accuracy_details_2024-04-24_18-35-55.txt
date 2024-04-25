@@ -1,0 +1,1 @@
+Epoch 1/100, Test Accuracy: 90.6000,Test AUC-ROC: 0.9716, Test F1 Score: 0.8974 

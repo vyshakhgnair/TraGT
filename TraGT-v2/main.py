@@ -8,7 +8,7 @@ import torch.optim as optim
 import torch.nn as nn
 from datetime import datetime
 import os
-from sklearn.metrics import roc_auc_score, f1_score
+from sklearn.metrics import roc_auc_score, f1_score, precision_score, recall_score
 import numpy as np
 
 
@@ -34,8 +34,7 @@ def main(data_name,options):
     adj_matrices_train = [adj_list_to_adj_matrix(adj_list) for adj_list in train_data['adj_lists']]
     adj_matrices_test = [adj_list_to_adj_matrix(adj_list) for adj_list in test_data['adj_lists']]
 
-    data_sequence_train = torch.stack(train_data['sequence'])
-    data_sequence_test = torch.stack(test_data['sequence'])
+
     
     data_list_train = [Data(x=torch.tensor(features, dtype=torch.float),
                               edge_index=torch.nonzero(adj_matrix, as_tuple=False).t().contiguous(),
@@ -92,22 +91,25 @@ def main(data_name,options):
 
             for data_batch in train_dataset:
                 graph_data_batch = data_batch[0]
-                sequence_inputs  = data_batch[1]
+                sequence_inputs  = data_batch[1].to(device)
                 sequence_targets=graph_data_batch.y
 
                 # Zero the gradients
                 optimizer.zero_grad()
 
                 # Forward pass
-                output = fusion_model(graph_data_batch, sequence_inputs)
+                output,reconstructed_sequence = fusion_model(graph_data_batch, sequence_inputs)
                 
                 # Compute binary predictions
                 binary_predictions = (output >= 0.5).float()
+                
+                # Compute reconstruction loss
 
                 # Compute batch accuracy
                 batch_correct = (binary_predictions == sequence_targets).sum().item()
                 total_correct += batch_correct
                 total_samples += 1
+
 
                 output = output.to(device)
                 sequence_targets = sequence_targets.view(-1, 1).to(device)
@@ -116,8 +118,17 @@ def main(data_name,options):
                 pred_probs_train.append(output.detach().cpu().numpy())
                 #print(output,sequence_targets,pred_probs_train)
                 
+                # Cast sequence_inputs to float
+                sequence_inputs = sequence_inputs.float()
+                reconstructed_sequence = reconstructed_sequence.to(device)
+                #print(reconstructed_sequence.shape,sequence_inputs.shape)
+                
+                # Compute reconstruction loss
+                reconstruction_loss = nn.MSELoss()(reconstructed_sequence, sequence_inputs)
+                
                 # Compute loss
-                loss = criterion(output, sequence_targets)
+                
+                loss = criterion(output, sequence_targets)+reconstruction_loss
                 losses+=loss.item()
 
                 # Backward pass
@@ -141,11 +152,12 @@ def main(data_name,options):
             pred_probs_train = np.concatenate(pred_probs_train)
 
             #print(true_labels_train,pred_probs_train)
-
+            precision_train = precision_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
+            recall_train = recall_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
             auc_roc_train = roc_auc_score(true_labels_train, pred_probs_train)
             f1_train = f1_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
-            print(f"Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f}\n")
-            file_train.write(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {epoch_train_accuracy:.4f}, Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f}\n')
+            print(f"Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f} , Train Precision: {precision_train:.4f}, Train Recall: {recall_train:.4f}\n")
+            file_train.write(f'Epoch {epoch + 1}/{num_epochs}, Train Loss: {losses:.4f}, Train Accuracy: {epoch_train_accuracy:.4f}, Train AUC-ROC: {auc_roc_train:.4f}, Train F1 Score: {f1_train:.4f} , Train Precision: {precision_train:.4f}, Train Recall: {recall_train:.4f}\n')
             
             total_correct = 0
             total_samples = 0
@@ -158,13 +170,14 @@ def main(data_name,options):
                 sequence_targets = graph_data_batch.y
                     
                     
-                output = fusion_model(graph_data_batch, sequence_inputs)
+                output,reconstructed_sequence = fusion_model(graph_data_batch, sequence_inputs)
                 binary_predictions = (output >= 0.5).float()
                     
                     
                 batch_correct = (binary_predictions == sequence_targets).sum().item()
                 total_correct += batch_correct
                 total_samples += 1
+                
                 true_labels_test.append(sequence_targets.cpu().numpy().reshape(-1))
                 pred_probs_test.append(output.detach().cpu().numpy())
                 
@@ -180,10 +193,13 @@ def main(data_name,options):
             
             true_labels_test = np.concatenate(true_labels_test)
             pred_probs_test = np.concatenate(pred_probs_test)
+            
+            precision_test = precision_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
+            recall_test = recall_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
             f1_test = f1_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
-            print(f"Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}\n")
-            file_test.write(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {epoch_test_accuracy:.4f},Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f} \n')
+            print(f"Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}, Test Precision: {precision_test:.4f}, Test Recall: {recall_test:.4f}\n")
+            file_test.write(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {epoch_test_accuracy:.4f},Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}, Test Precision: {precision_test:.4f}, Test Recall: {recall_test:.4f} \n')
     file_test.close()
     file_train.close()
             
