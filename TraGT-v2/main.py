@@ -179,7 +179,7 @@ def main(data_name,options):
                 total_samples += 1
                 
                 true_labels_test.append(sequence_targets.cpu().numpy().reshape(-1))
-                pred_probs_test.append(output.detach().cpu().numpy())
+                pred_probs_test.append(output.detach().cpu().numpy()[0])
                 
             epoch_test_accuracy = (total_correct / total_samples)*100
             print(f"Epoch Testing Accuracy : {epoch_test_accuracy:.4f}")
@@ -194,6 +194,7 @@ def main(data_name,options):
             true_labels_test = np.concatenate(true_labels_test)
             pred_probs_test = np.concatenate(pred_probs_test)
             
+            print(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             precision_test = precision_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             recall_test = recall_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
@@ -209,6 +210,6 @@ def main(data_name,options):
 
 if __name__ == "__main__":
     options=[True,True,True]
-    data_name='fda'
+    data_name='bace'
     main(data_name,options)
     
