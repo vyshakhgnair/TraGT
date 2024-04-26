@@ -80,7 +80,7 @@ def main(data_name,options):
     best_train_accuracy = 0.0
     best_test_accuracy=0.0
     # Training loop
-
+    reconstruction_weight = 0.1 # Weight for the reconstruction loss
     with open(file_name_train, 'a') as file_train, open(file_name_test, 'a') as file_test:
         for epoch in range(100):
             total_correct = 0
@@ -128,7 +128,7 @@ def main(data_name,options):
                 
                 # Compute loss
                 
-                loss = criterion(output, sequence_targets)+reconstruction_loss
+                loss = criterion(output, sequence_targets)+reconstruction_loss * reconstruction_weight
                 losses+=loss.item()
 
                 # Backward pass
