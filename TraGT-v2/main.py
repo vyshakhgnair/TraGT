@@ -80,7 +80,7 @@ def main(data_name,options):
     best_train_accuracy = 0.0
     best_test_accuracy=0.0
     # Training loop
-    reconstruction_weight = 0.1 # Weight for the reconstruction loss
+    reconstruction_weight = 1 # Weight for the reconstruction loss
     with open(file_name_train, 'a') as file_train, open(file_name_test, 'a') as file_test:
         for epoch in range(100):
             total_correct = 0
@@ -194,7 +194,7 @@ def main(data_name,options):
             true_labels_test = np.concatenate(true_labels_test)
             pred_probs_test = np.concatenate(pred_probs_test)
             
-            print(true_labels_test, (pred_probs_test >= 0.5).astype(int))
+            #print(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             precision_test = precision_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             recall_test = recall_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
@@ -210,6 +210,6 @@ def main(data_name,options):
 
 if __name__ == "__main__":
     options=[True,True,True]
-    data_name='bace'
+    data_name='bbbp'
     main(data_name,options)
     

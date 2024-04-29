@@ -1,0 +1,18 @@
+Dataset: logp
+Date: 2024-04-28_23-02-28
+
+Epoch with highest Test Accuracy:
+{'Epoch': 12, 'Test Accuracy': 91.3, 'Test AUC-ROC': 0.9766, 'Test F1 Score': 0.9045, 'Test Precision': 0.981, 'Test Recall': 0.8391}
+
+Epoch with highest Test AUC-ROC:
+{'Epoch': 25, 'Test Accuracy': 87.9, 'Test AUC-ROC': 0.9798, 'Test F1 Score': 0.8601, 'Test Precision': 0.9947, 'Test Recall': 0.7576}
+
+Epoch with highest Test F1 Score:
+{'Epoch': 12, 'Test Accuracy': 91.3, 'Test AUC-ROC': 0.9766, 'Test F1 Score': 0.9045, 'Test Precision': 0.981, 'Test Recall': 0.8391}
+
+Epoch with highest Test Precision:
+{'Epoch': 29, 'Test Accuracy': 87.9, 'Test AUC-ROC': 0.9785, 'Test F1 Score': 0.8595, 'Test Precision': 1.0, 'Test Recall': 0.7536}
+
+Epoch with highest Test Recall:
+{'Epoch': 77, 'Test Accuracy': 90.9, 'Test AUC-ROC': 0.9664, 'Test F1 Score': 0.9045, 'Test Precision': 0.9329, 'Test Recall': 0.8778}
+

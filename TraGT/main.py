@@ -151,7 +151,7 @@ def main(data_name,options):
             # Replace NaN values with 0
             pred_probs_train = np.nan_to_num(pred_probs_train, nan=0)
 
-            print(true_labels_train,pred_probs_train)
+            #print(true_labels_train,pred_probs_train)
             precision_train = precision_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
             recall_train = recall_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
             auc_roc_train = roc_auc_score(true_labels_train, pred_probs_train)
@@ -194,7 +194,7 @@ def main(data_name,options):
             true_labels_test = np.concatenate(true_labels_test)
             pred_probs_test = np.concatenate(pred_probs_test)
             
-            print(true_labels_test, (pred_probs_test >= 0.5).astype(int))
+            #print(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             precision_test = precision_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             recall_test = recall_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
