@@ -34,8 +34,6 @@ def main(data_name,options):
     adj_matrices_train = [adj_list_to_adj_matrix(adj_list) for adj_list in train_data['adj_lists']]
     adj_matrices_test = [adj_list_to_adj_matrix(adj_list) for adj_list in test_data['adj_lists']]
 
-    data_sequence_train = torch.stack(train_data['sequence'])
-    data_sequence_test = torch.stack(test_data['sequence'])
     
     data_list_train = [Data(x=torch.tensor(features, dtype=torch.float),
                               edge_index=torch.nonzero(adj_matrix, as_tuple=False).t().contiguous(),
@@ -210,6 +208,6 @@ def main(data_name,options):
 
 if __name__ == "__main__":
     options=[True,True,True]
-    data_name='bace'
+    data_name='bbbp'
     main(data_name,options)
     
