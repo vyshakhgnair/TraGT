@@ -1,0 +1,599 @@
+Epoch 1/100, Epoch Accuracy: 79.6875
+Train AUC-ROC: 0.8832, Train F1 Score: 0.7744 , Train Precision: 0.8740, Train Recall: 0.6952
+
+Epoch Testing Accuracy : 76.6000
+Test AUC-ROC: 0.9371, Test F1 Score: 0.6921, Test Precision: 0.9777, Test Recall: 0.5356
+
+Epoch 2/100, Epoch Accuracy: 86.7625
+Train AUC-ROC: 0.9433, Train F1 Score: 0.8587 , Train Precision: 0.9242, Train Recall: 0.8018
+
+Epoch Testing Accuracy : 85.3000
+Test AUC-ROC: 0.9532, Test F1 Score: 0.8256, Test Precision: 0.9886, Test Recall: 0.7088
+
+Epoch 3/100, Epoch Accuracy: 89.2250
+Train AUC-ROC: 0.9601, Train F1 Score: 0.8866 , Train Precision: 0.9390, Train Recall: 0.8397
+
+Epoch Testing Accuracy : 88.6000
+Test AUC-ROC: 0.9634, Test F1 Score: 0.8713, Test Precision: 0.9772, Test Recall: 0.7862
+
+Epoch 4/100, Epoch Accuracy: 90.3750
+Train AUC-ROC: 0.9649, Train F1 Score: 0.8990 , Train Precision: 0.9488, Train Recall: 0.8542
+
+Epoch Testing Accuracy : 89.1000
+Test AUC-ROC: 0.9670, Test F1 Score: 0.8790, Test Precision: 0.9659, Test Recall: 0.8065
+
+Epoch 5/100, Epoch Accuracy: 90.8375
+Train AUC-ROC: 0.9684, Train F1 Score: 0.9041 , Train Precision: 0.9515, Train Recall: 0.8612
+
+Epoch Testing Accuracy : 85.5000
+Test AUC-ROC: 0.9567, Test F1 Score: 0.8292, Test Precision: 0.9832, Test Recall: 0.7169
+
+Epoch 6/100, Epoch Accuracy: 90.7875
+Train AUC-ROC: 0.9691, Train F1 Score: 0.9037 , Train Precision: 0.9492, Train Recall: 0.8624
+
+Epoch Testing Accuracy : 89.1000
+Test AUC-ROC: 0.9657, Test F1 Score: 0.8788, Test Precision: 0.9681, Test Recall: 0.8045
+
+Epoch 7/100, Epoch Accuracy: 91.1125
+Train AUC-ROC: 0.9708, Train F1 Score: 0.9072 , Train Precision: 0.9518, Train Recall: 0.8667
+
+Epoch Testing Accuracy : 88.3000
+Test AUC-ROC: 0.9638, Test F1 Score: 0.8684, Test Precision: 0.9698, Test Recall: 0.7862
+
+Epoch 8/100, Epoch Accuracy: 91.0500
+Train AUC-ROC: 0.9709, Train F1 Score: 0.9066 , Train Precision: 0.9510, Train Recall: 0.8662
+
+Epoch Testing Accuracy : 86.0000
+Test AUC-ROC: 0.9609, Test F1 Score: 0.8368, Test Precision: 0.9782, Test Recall: 0.7312
+
+Epoch 9/100, Epoch Accuracy: 91.2625
+Train AUC-ROC: 0.9715, Train F1 Score: 0.9088 , Train Precision: 0.9537, Train Recall: 0.8679
+
+Epoch Testing Accuracy : 84.9000
+Test AUC-ROC: 0.9547, Test F1 Score: 0.8226, Test Precision: 0.9722, Test Recall: 0.7128
+
+Epoch 10/100, Epoch Accuracy: 91.4625
+Train AUC-ROC: 0.9721, Train F1 Score: 0.9110 , Train Precision: 0.9549, Train Recall: 0.8709
+
+Epoch Testing Accuracy : 84.4000
+Test AUC-ROC: 0.9553, Test F1 Score: 0.8152, Test Precision: 0.9745, Test Recall: 0.7006
+
+Epoch 11/100, Epoch Accuracy: 88.7625
+Train AUC-ROC: 0.9568, Train F1 Score: 0.8802 , Train Precision: 0.9459, Train Recall: 0.8230
+
+Epoch Testing Accuracy : 88.3000
+Test AUC-ROC: 0.9617, Test F1 Score: 0.8660, Test Precision: 0.9895, Test Recall: 0.7699
+
+Epoch 12/100, Epoch Accuracy: 90.8375
+Train AUC-ROC: 0.9686, Train F1 Score: 0.9040 , Train Precision: 0.9520, Train Recall: 0.8607
+
+Epoch Testing Accuracy : 88.6000
+Test AUC-ROC: 0.9675, Test F1 Score: 0.8702, Test Precision: 0.9871, Test Recall: 0.7780
+
+Epoch 13/100, Epoch Accuracy: 90.8875
+Train AUC-ROC: 0.9700, Train F1 Score: 0.9043 , Train Precision: 0.9551, Train Recall: 0.8587
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9692, Test F1 Score: 0.8947, Test Precision: 0.9691, Test Recall: 0.8310
+
+Epoch 14/100, Epoch Accuracy: 91.5000
+Train AUC-ROC: 0.9708, Train F1 Score: 0.9115 , Train Precision: 0.9535, Train Recall: 0.8731
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9715, Test F1 Score: 0.8929, Test Precision: 0.9877, Test Recall: 0.8147
+
+Epoch 15/100, Epoch Accuracy: 91.6375
+Train AUC-ROC: 0.9732, Train F1 Score: 0.9132 , Train Precision: 0.9526, Train Recall: 0.8769
+
+Epoch Testing Accuracy : 89.4000
+Test AUC-ROC: 0.9648, Test F1 Score: 0.8814, Test Precision: 0.9777, Test Recall: 0.8024
+
+Epoch 16/100, Epoch Accuracy: 91.4500
+Train AUC-ROC: 0.9733, Train F1 Score: 0.9110 , Train Precision: 0.9534, Train Recall: 0.8721
+
+Epoch Testing Accuracy : 89.8000
+Test AUC-ROC: 0.9715, Test F1 Score: 0.8854, Test Precision: 0.9875, Test Recall: 0.8024
+
+Epoch 17/100, Epoch Accuracy: 91.5000
+Train AUC-ROC: 0.9736, Train F1 Score: 0.9114 , Train Precision: 0.9547, Train Recall: 0.8719
+
+Epoch Testing Accuracy : 91.5000
+Test AUC-ROC: 0.9722, Test F1 Score: 0.9065, Test Precision: 0.9856, Test Recall: 0.8391
+
+Epoch 18/100, Epoch Accuracy: 91.8125
+Train AUC-ROC: 0.9743, Train F1 Score: 0.9149 , Train Precision: 0.9557, Train Recall: 0.8774
+
+Epoch Testing Accuracy : 88.1000
+Test AUC-ROC: 0.9669, Test F1 Score: 0.8631, Test Precision: 0.9921, Test Recall: 0.7637
+
+Epoch 19/100, Epoch Accuracy: 91.5125
+Train AUC-ROC: 0.9741, Train F1 Score: 0.9114 , Train Precision: 0.9567, Train Recall: 0.8701
+
+Epoch Testing Accuracy : 89.5000
+Test AUC-ROC: 0.9672, Test F1 Score: 0.8850, Test Precision: 0.9573, Test Recall: 0.8228
+
+Epoch 20/100, Epoch Accuracy: 92.0125
+Train AUC-ROC: 0.9753, Train F1 Score: 0.9167 , Train Precision: 0.9607, Train Recall: 0.8766
+
+Epoch Testing Accuracy : 88.7000
+Test AUC-ROC: 0.9675, Test F1 Score: 0.8729, Test Precision: 0.9749, Test Recall: 0.7902
+
+Epoch 21/100, Epoch Accuracy: 91.7875
+Train AUC-ROC: 0.9750, Train F1 Score: 0.9147 , Train Precision: 0.9547, Train Recall: 0.8779
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9674, Test F1 Score: 0.8950, Test Precision: 0.9669, Test Recall: 0.8330
+
+Epoch 22/100, Epoch Accuracy: 92.1625
+Train AUC-ROC: 0.9751, Train F1 Score: 0.9186 , Train Precision: 0.9588, Train Recall: 0.8816
+
+Epoch Testing Accuracy : 89.8000
+Test AUC-ROC: 0.9684, Test F1 Score: 0.8867, Test Precision: 0.9756, Test Recall: 0.8126
+
+Epoch 23/100, Epoch Accuracy: 91.8750
+Train AUC-ROC: 0.9758, Train F1 Score: 0.9154 , Train Precision: 0.9578, Train Recall: 0.8766
+
+Epoch Testing Accuracy : 88.6000
+Test AUC-ROC: 0.9690, Test F1 Score: 0.8705, Test Precision: 0.9846, Test Recall: 0.7800
+
+Epoch 24/100, Epoch Accuracy: 91.9875
+Train AUC-ROC: 0.9758, Train F1 Score: 0.9167 , Train Precision: 0.9576, Train Recall: 0.8791
+
+Epoch Testing Accuracy : 89.5000
+Test AUC-ROC: 0.9714, Test F1 Score: 0.8835, Test Precision: 0.9707, Test Recall: 0.8106
+
+Epoch 25/100, Epoch Accuracy: 92.1125
+Train AUC-ROC: 0.9763, Train F1 Score: 0.9182 , Train Precision: 0.9570, Train Recall: 0.8824
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9713, Test F1 Score: 0.9005, Test Precision: 0.9717, Test Recall: 0.8391
+
+Epoch 26/100, Epoch Accuracy: 92.0625
+Train AUC-ROC: 0.9764, Train F1 Score: 0.9175 , Train Precision: 0.9585, Train Recall: 0.8799
+
+Epoch Testing Accuracy : 90.0000
+Test AUC-ROC: 0.9691, Test F1 Score: 0.8891, Test Precision: 0.9757, Test Recall: 0.8167
+
+Epoch 27/100, Epoch Accuracy: 92.0125
+Train AUC-ROC: 0.9764, Train F1 Score: 0.9169 , Train Precision: 0.9582, Train Recall: 0.8791
+
+Epoch Testing Accuracy : 90.6000
+Test AUC-ROC: 0.9696, Test F1 Score: 0.8969, Test Precision: 0.9715, Test Recall: 0.8330
+
+Epoch 28/100, Epoch Accuracy: 92.0125
+Train AUC-ROC: 0.9759, Train F1 Score: 0.9169 , Train Precision: 0.9582, Train Recall: 0.8791
+
+Epoch Testing Accuracy : 90.2000
+Test AUC-ROC: 0.9688, Test F1 Score: 0.8921, Test Precision: 0.9712, Test Recall: 0.8248
+
+Epoch 29/100, Epoch Accuracy: 92.2875
+Train AUC-ROC: 0.9765, Train F1 Score: 0.9199 , Train Precision: 0.9594, Train Recall: 0.8836
+
+Epoch Testing Accuracy : 90.6000
+Test AUC-ROC: 0.9682, Test F1 Score: 0.8965, Test Precision: 0.9760, Test Recall: 0.8289
+
+Epoch 30/100, Epoch Accuracy: 92.3625
+Train AUC-ROC: 0.9768, Train F1 Score: 0.9208 , Train Precision: 0.9595, Train Recall: 0.8851
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9688, Test F1 Score: 0.9044, Test Precision: 0.9568, Test Recall: 0.8574
+
+Epoch 31/100, Epoch Accuracy: 92.3250
+Train AUC-ROC: 0.9770, Train F1 Score: 0.9202 , Train Precision: 0.9609, Train Recall: 0.8829
+
+Epoch Testing Accuracy : 89.7000
+Test AUC-ROC: 0.9689, Test F1 Score: 0.8854, Test Precision: 0.9755, Test Recall: 0.8106
+
+Epoch 32/100, Epoch Accuracy: 92.3375
+Train AUC-ROC: 0.9772, Train F1 Score: 0.9205 , Train Precision: 0.9592, Train Recall: 0.8848
+
+Epoch Testing Accuracy : 91.2000
+Test AUC-ROC: 0.9744, Test F1 Score: 0.9041, Test Precision: 0.9719, Test Recall: 0.8452
+
+Epoch 33/100, Epoch Accuracy: 92.3125
+Train AUC-ROC: 0.9777, Train F1 Score: 0.9202 , Train Precision: 0.9592, Train Recall: 0.8843
+
+Epoch Testing Accuracy : 91.0000
+Test AUC-ROC: 0.9712, Test F1 Score: 0.9026, Test Precision: 0.9630, Test Recall: 0.8493
+
+Epoch 34/100, Epoch Accuracy: 92.4125
+Train AUC-ROC: 0.9778, Train F1 Score: 0.9213 , Train Precision: 0.9603, Train Recall: 0.8853
+
+Epoch Testing Accuracy : 90.2000
+Test AUC-ROC: 0.9687, Test F1 Score: 0.8935, Test Precision: 0.9580, Test Recall: 0.8371
+
+Epoch 35/100, Epoch Accuracy: 92.2750
+Train AUC-ROC: 0.9783, Train F1 Score: 0.9199 , Train Precision: 0.9582, Train Recall: 0.8846
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9721, Test F1 Score: 0.9032, Test Precision: 0.9696, Test Recall: 0.8452
+
+Epoch 36/100, Epoch Accuracy: 92.2500
+Train AUC-ROC: 0.9783, Train F1 Score: 0.9198 , Train Precision: 0.9559, Train Recall: 0.8863
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9719, Test F1 Score: 0.8940, Test Precision: 0.9759, Test Recall: 0.8248
+
+Epoch 37/100, Epoch Accuracy: 92.7125
+Train AUC-ROC: 0.9777, Train F1 Score: 0.9246 , Train Precision: 0.9603, Train Recall: 0.8916
+
+Epoch Testing Accuracy : 90.8000
+Test AUC-ROC: 0.9719, Test F1 Score: 0.8987, Test Precision: 0.9784, Test Recall: 0.8310
+
+Epoch 38/100, Epoch Accuracy: 92.7000
+Train AUC-ROC: 0.9782, Train F1 Score: 0.9246 , Train Precision: 0.9590, Train Recall: 0.8926
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9739, Test F1 Score: 0.9008, Test Precision: 0.9695, Test Recall: 0.8411
+
+Epoch 39/100, Epoch Accuracy: 92.2875
+Train AUC-ROC: 0.9769, Train F1 Score: 0.9199 , Train Precision: 0.9599, Train Recall: 0.8831
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9706, Test F1 Score: 0.8994, Test Precision: 0.9831, Test Recall: 0.8289
+
+Epoch 40/100, Epoch Accuracy: 92.6500
+Train AUC-ROC: 0.9792, Train F1 Score: 0.9239 , Train Precision: 0.9612, Train Recall: 0.8893
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9683, Test F1 Score: 0.9029, Test Precision: 0.9718, Test Recall: 0.8432
+
+Epoch 41/100, Epoch Accuracy: 92.6375
+Train AUC-ROC: 0.9786, Train F1 Score: 0.9238 , Train Precision: 0.9605, Train Recall: 0.8898
+
+Epoch Testing Accuracy : 90.6000
+Test AUC-ROC: 0.9730, Test F1 Score: 0.8967, Test Precision: 0.9737, Test Recall: 0.8310
+
+Epoch 42/100, Epoch Accuracy: 92.6500
+Train AUC-ROC: 0.9787, Train F1 Score: 0.9238 , Train Precision: 0.9625, Train Recall: 0.8881
+
+Epoch Testing Accuracy : 91.5000
+Test AUC-ROC: 0.9756, Test F1 Score: 0.9077, Test Precision: 0.9721, Test Recall: 0.8513
+
+Epoch 43/100, Epoch Accuracy: 92.8000
+Train AUC-ROC: 0.9795, Train F1 Score: 0.9255 , Train Precision: 0.9613, Train Recall: 0.8923
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9681, Test F1 Score: 0.8933, Test Precision: 0.9829, Test Recall: 0.8187
+
+Epoch 44/100, Epoch Accuracy: 92.8250
+Train AUC-ROC: 0.9797, Train F1 Score: 0.9259 , Train Precision: 0.9609, Train Recall: 0.8933
+
+Epoch Testing Accuracy : 91.3000
+Test AUC-ROC: 0.9732, Test F1 Score: 0.9049, Test Precision: 0.9764, Test Recall: 0.8432
+
+Epoch 45/100, Epoch Accuracy: 92.7750
+Train AUC-ROC: 0.9796, Train F1 Score: 0.9252 , Train Precision: 0.9618, Train Recall: 0.8913
+
+Epoch Testing Accuracy : 91.4000
+Test AUC-ROC: 0.9727, Test F1 Score: 0.9069, Test Precision: 0.9677, Test Recall: 0.8534
+
+Epoch 46/100, Epoch Accuracy: 92.6875
+Train AUC-ROC: 0.9794, Train F1 Score: 0.9243 , Train Precision: 0.9610, Train Recall: 0.8903
+
+Epoch Testing Accuracy : 91.7000
+Test AUC-ROC: 0.9718, Test F1 Score: 0.9099, Test Precision: 0.9744, Test Recall: 0.8534
+
+Epoch 47/100, Epoch Accuracy: 92.7875
+Train AUC-ROC: 0.9798, Train F1 Score: 0.9252 , Train Precision: 0.9636, Train Recall: 0.8898
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9713, Test F1 Score: 0.9003, Test Precision: 0.9739, Test Recall: 0.8371
+
+Epoch 48/100, Epoch Accuracy: 92.7250
+Train AUC-ROC: 0.9786, Train F1 Score: 0.9247 , Train Precision: 0.9610, Train Recall: 0.8911
+
+Epoch Testing Accuracy : 89.4000
+Test AUC-ROC: 0.9729, Test F1 Score: 0.8822, Test Precision: 0.9707, Test Recall: 0.8086
+
+Epoch 49/100, Epoch Accuracy: 92.5875
+Train AUC-ROC: 0.9795, Train F1 Score: 0.9233 , Train Precision: 0.9597, Train Recall: 0.8896
+
+Epoch Testing Accuracy : 88.7000
+Test AUC-ROC: 0.9671, Test F1 Score: 0.8720, Test Precision: 0.9821, Test Recall: 0.7841
+
+Epoch 50/100, Epoch Accuracy: 92.8250
+Train AUC-ROC: 0.9790, Train F1 Score: 0.9258 , Train Precision: 0.9616, Train Recall: 0.8926
+
+Epoch Testing Accuracy : 92.0000
+Test AUC-ROC: 0.9761, Test F1 Score: 0.9129, Test Precision: 0.9813, Test Recall: 0.8534
+
+Epoch 51/100, Epoch Accuracy: 92.7625
+Train AUC-ROC: 0.9789, Train F1 Score: 0.9252 , Train Precision: 0.9606, Train Recall: 0.8923
+
+Epoch Testing Accuracy : 90.0000
+Test AUC-ROC: 0.9721, Test F1 Score: 0.8884, Test Precision: 0.9827, Test Recall: 0.8106
+
+Epoch 52/100, Epoch Accuracy: 92.7625
+Train AUC-ROC: 0.9797, Train F1 Score: 0.9250 , Train Precision: 0.9623, Train Recall: 0.8906
+
+Epoch Testing Accuracy : 91.5000
+Test AUC-ROC: 0.9763, Test F1 Score: 0.9089, Test Precision: 0.9593, Test Recall: 0.8635
+
+Epoch 53/100, Epoch Accuracy: 93.0125
+Train AUC-ROC: 0.9798, Train F1 Score: 0.9278 , Train Precision: 0.9625, Train Recall: 0.8956
+
+Epoch Testing Accuracy : 91.2000
+Test AUC-ROC: 0.9720, Test F1 Score: 0.9033, Test Precision: 0.9809, Test Recall: 0.8371
+
+Epoch 54/100, Epoch Accuracy: 92.9000
+Train AUC-ROC: 0.9791, Train F1 Score: 0.9265 , Train Precision: 0.9634, Train Recall: 0.8923
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9729, Test F1 Score: 0.9001, Test Precision: 0.9762, Test Recall: 0.8350
+
+Epoch 55/100, Epoch Accuracy: 92.9875
+Train AUC-ROC: 0.9798, Train F1 Score: 0.9276 , Train Precision: 0.9620, Train Recall: 0.8956
+
+Epoch Testing Accuracy : 91.8000
+Test AUC-ROC: 0.9750, Test F1 Score: 0.9120, Test Precision: 0.9637, Test Recall: 0.8656
+
+Epoch 56/100, Epoch Accuracy: 92.8875
+Train AUC-ROC: 0.9803, Train F1 Score: 0.9266 , Train Precision: 0.9597, Train Recall: 0.8958
+
+Epoch Testing Accuracy : 87.6000
+Test AUC-ROC: 0.9644, Test F1 Score: 0.8581, Test Precision: 0.9791, Test Recall: 0.7637
+
+Epoch 57/100, Epoch Accuracy: 92.8125
+Train AUC-ROC: 0.9803, Train F1 Score: 0.9258 , Train Precision: 0.9604, Train Recall: 0.8936
+
+Epoch Testing Accuracy : 90.6000
+Test AUC-ROC: 0.9698, Test F1 Score: 0.8958, Test Precision: 0.9830, Test Recall: 0.8228
+
+Epoch 58/100, Epoch Accuracy: 92.8875
+Train AUC-ROC: 0.9808, Train F1 Score: 0.9265 , Train Precision: 0.9617, Train Recall: 0.8938
+
+Epoch Testing Accuracy : 91.3000
+Test AUC-ROC: 0.9726, Test F1 Score: 0.9070, Test Precision: 0.9550, Test Recall: 0.8635
+
+Epoch 59/100, Epoch Accuracy: 93.0875
+Train AUC-ROC: 0.9816, Train F1 Score: 0.9286 , Train Precision: 0.9631, Train Recall: 0.8966
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9723, Test F1 Score: 0.9005, Test Precision: 0.9717, Test Recall: 0.8391
+
+Epoch 60/100, Epoch Accuracy: 93.1750
+Train AUC-ROC: 0.9810, Train F1 Score: 0.9295 , Train Precision: 0.9641, Train Recall: 0.8973
+
+Epoch Testing Accuracy : 91.4000
+Test AUC-ROC: 0.9711, Test F1 Score: 0.9069, Test Precision: 0.9677, Test Recall: 0.8534
+
+Epoch 61/100, Epoch Accuracy: 93.1000
+Train AUC-ROC: 0.9806, Train F1 Score: 0.9288 , Train Precision: 0.9626, Train Recall: 0.8973
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9743, Test F1 Score: 0.9012, Test Precision: 0.9651, Test Recall: 0.8452
+
+Epoch 62/100, Epoch Accuracy: 93.1875
+Train AUC-ROC: 0.9808, Train F1 Score: 0.9295 , Train Precision: 0.9656, Train Recall: 0.8961
+
+Epoch Testing Accuracy : 91.0000
+Test AUC-ROC: 0.9723, Test F1 Score: 0.9020, Test Precision: 0.9696, Test Recall: 0.8432
+
+Epoch 63/100, Epoch Accuracy: 92.8875
+Train AUC-ROC: 0.9810, Train F1 Score: 0.9266 , Train Precision: 0.9597, Train Recall: 0.8958
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9747, Test F1 Score: 0.9042, Test Precision: 0.9589, Test Recall: 0.8554
+
+Epoch 64/100, Epoch Accuracy: 92.7250
+Train AUC-ROC: 0.9804, Train F1 Score: 0.9248 , Train Precision: 0.9595, Train Recall: 0.8926
+
+Epoch Testing Accuracy : 90.5000
+Test AUC-ROC: 0.9731, Test F1 Score: 0.8948, Test Precision: 0.9806, Test Recall: 0.8228
+
+Epoch 65/100, Epoch Accuracy: 92.7625
+Train AUC-ROC: 0.9802, Train F1 Score: 0.9252 , Train Precision: 0.9606, Train Recall: 0.8923
+
+Epoch Testing Accuracy : 90.8000
+Test AUC-ROC: 0.9720, Test F1 Score: 0.8998, Test Precision: 0.9672, Test Recall: 0.8411
+
+Epoch 66/100, Epoch Accuracy: 93.1375
+Train AUC-ROC: 0.9812, Train F1 Score: 0.9292 , Train Precision: 0.9628, Train Recall: 0.8978
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9736, Test F1 Score: 0.9040, Test Precision: 0.9610, Test Recall: 0.8534
+
+Epoch 67/100, Epoch Accuracy: 93.1750
+Train AUC-ROC: 0.9811, Train F1 Score: 0.9297 , Train Precision: 0.9614, Train Recall: 0.9000
+
+Epoch Testing Accuracy : 91.8000
+Test AUC-ROC: 0.9739, Test F1 Score: 0.9116, Test Precision: 0.9680, Test Recall: 0.8615
+
+Epoch 68/100, Epoch Accuracy: 93.2750
+Train AUC-ROC: 0.9804, Train F1 Score: 0.9307 , Train Precision: 0.9625, Train Recall: 0.9010
+
+Epoch Testing Accuracy : 90.7000
+Test AUC-ROC: 0.9740, Test F1 Score: 0.8977, Test Precision: 0.9761, Test Recall: 0.8310
+
+Epoch 69/100, Epoch Accuracy: 93.0250
+Train AUC-ROC: 0.9814, Train F1 Score: 0.9280 , Train Precision: 0.9620, Train Recall: 0.8963
+
+Epoch Testing Accuracy : 91.7000
+Test AUC-ROC: 0.9745, Test F1 Score: 0.9099, Test Precision: 0.9744, Test Recall: 0.8534
+
+Epoch 70/100, Epoch Accuracy: 93.3000
+Train AUC-ROC: 0.9815, Train F1 Score: 0.9310 , Train Precision: 0.9625, Train Recall: 0.9015
+
+Epoch Testing Accuracy : 90.0000
+Test AUC-ROC: 0.9736, Test F1 Score: 0.8899, Test Precision: 0.9688, Test Recall: 0.8228
+
+Epoch 71/100, Epoch Accuracy: 93.2375
+Train AUC-ROC: 0.9814, Train F1 Score: 0.9302 , Train Precision: 0.9647, Train Recall: 0.8981
+
+Epoch Testing Accuracy : 88.8000
+Test AUC-ROC: 0.9687, Test F1 Score: 0.8727, Test Precision: 0.9871, Test Recall: 0.7821
+
+Epoch 72/100, Epoch Accuracy: 92.7625
+Train AUC-ROC: 0.9807, Train F1 Score: 0.9252 , Train Precision: 0.9606, Train Recall: 0.8923
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9721, Test F1 Score: 0.9005, Test Precision: 0.9717, Test Recall: 0.8391
+
+Epoch 73/100, Epoch Accuracy: 92.7375
+Train AUC-ROC: 0.9810, Train F1 Score: 0.9250 , Train Precision: 0.9595, Train Recall: 0.8928
+
+Epoch Testing Accuracy : 90.8000
+Test AUC-ROC: 0.9741, Test F1 Score: 0.8989, Test Precision: 0.9761, Test Recall: 0.8330
+
+Epoch 74/100, Epoch Accuracy: 91.3750
+Train AUC-ROC: 0.9745, Train F1 Score: 0.9101 , Train Precision: 0.9531, Train Recall: 0.8709
+
+Epoch Testing Accuracy : 90.7000
+Test AUC-ROC: 0.9722, Test F1 Score: 0.8984, Test Precision: 0.9693, Test Recall: 0.8371
+
+Epoch 75/100, Epoch Accuracy: 93.0375
+Train AUC-ROC: 0.9794, Train F1 Score: 0.9282 , Train Precision: 0.9610, Train Recall: 0.8976
+
+Epoch Testing Accuracy : 89.7000
+Test AUC-ROC: 0.9717, Test F1 Score: 0.8857, Test Precision: 0.9732, Test Recall: 0.8126
+
+Epoch 76/100, Epoch Accuracy: 93.2500
+Train AUC-ROC: 0.9816, Train F1 Score: 0.9306 , Train Precision: 0.9602, Train Recall: 0.9028
+
+Epoch Testing Accuracy : 91.0000
+Test AUC-ROC: 0.9743, Test F1 Score: 0.9015, Test Precision: 0.9740, Test Recall: 0.8391
+
+Epoch 77/100, Epoch Accuracy: 93.1375
+Train AUC-ROC: 0.9819, Train F1 Score: 0.9292 , Train Precision: 0.9626, Train Recall: 0.8981
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9721, Test F1 Score: 0.8954, Test Precision: 0.9625, Test Recall: 0.8371
+
+Epoch 78/100, Epoch Accuracy: 93.0500
+Train AUC-ROC: 0.9810, Train F1 Score: 0.9284 , Train Precision: 0.9606, Train Recall: 0.8983
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9720, Test F1 Score: 0.9008, Test Precision: 0.9695, Test Recall: 0.8411
+
+Epoch 79/100, Epoch Accuracy: 93.0875
+Train AUC-ROC: 0.9819, Train F1 Score: 0.9286 , Train Precision: 0.9631, Train Recall: 0.8966
+
+Epoch Testing Accuracy : 90.8000
+Test AUC-ROC: 0.9715, Test F1 Score: 0.8996, Test Precision: 0.9694, Test Recall: 0.8391
+
+Epoch 80/100, Epoch Accuracy: 93.3375
+Train AUC-ROC: 0.9818, Train F1 Score: 0.9312 , Train Precision: 0.9657, Train Recall: 0.8991
+
+Epoch Testing Accuracy : 90.6000
+Test AUC-ROC: 0.9702, Test F1 Score: 0.8985, Test Precision: 0.9563, Test Recall: 0.8473
+
+Epoch 81/100, Epoch Accuracy: 93.0250
+Train AUC-ROC: 0.9815, Train F1 Score: 0.9281 , Train Precision: 0.9613, Train Recall: 0.8971
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9718, Test F1 Score: 0.9003, Test Precision: 0.9739, Test Recall: 0.8371
+
+Epoch 82/100, Epoch Accuracy: 93.3875
+Train AUC-ROC: 0.9820, Train F1 Score: 0.9319 , Train Precision: 0.9643, Train Recall: 0.9015
+
+Epoch Testing Accuracy : 90.1000
+Test AUC-ROC: 0.9724, Test F1 Score: 0.8904, Test Precision: 0.9757, Test Recall: 0.8187
+
+Epoch 83/100, Epoch Accuracy: 93.0875
+Train AUC-ROC: 0.9815, Train F1 Score: 0.9286 , Train Precision: 0.9628, Train Recall: 0.8968
+
+Epoch Testing Accuracy : 91.4000
+Test AUC-ROC: 0.9731, Test F1 Score: 0.9073, Test Precision: 0.9634, Test Recall: 0.8574
+
+Epoch 84/100, Epoch Accuracy: 92.9875
+Train AUC-ROC: 0.9806, Train F1 Score: 0.9275 , Train Precision: 0.9625, Train Recall: 0.8951
+
+Epoch Testing Accuracy : 90.0000
+Test AUC-ROC: 0.9718, Test F1 Score: 0.8906, Test Precision: 0.9622, Test Recall: 0.8289
+
+Epoch 85/100, Epoch Accuracy: 93.0250
+Train AUC-ROC: 0.9816, Train F1 Score: 0.9279 , Train Precision: 0.9633, Train Recall: 0.8951
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9722, Test F1 Score: 0.9001, Test Precision: 0.9762, Test Recall: 0.8350
+
+Epoch 86/100, Epoch Accuracy: 93.1750
+Train AUC-ROC: 0.9820, Train F1 Score: 0.9296 , Train Precision: 0.9629, Train Recall: 0.8986
+
+Epoch Testing Accuracy : 89.7000
+Test AUC-ROC: 0.9732, Test F1 Score: 0.8867, Test Precision: 0.9641, Test Recall: 0.8208
+
+Epoch 87/100, Epoch Accuracy: 93.5625
+Train AUC-ROC: 0.9825, Train F1 Score: 0.9337 , Train Precision: 0.9656, Train Recall: 0.9038
+
+Epoch Testing Accuracy : 90.3000
+Test AUC-ROC: 0.9720, Test F1 Score: 0.8935, Test Precision: 0.9690, Test Recall: 0.8289
+
+Epoch 88/100, Epoch Accuracy: 93.4000
+Train AUC-ROC: 0.9823, Train F1 Score: 0.9320 , Train Precision: 0.9645, Train Recall: 0.9015
+
+Epoch Testing Accuracy : 90.2000
+Test AUC-ROC: 0.9713, Test F1 Score: 0.8935, Test Precision: 0.9580, Test Recall: 0.8371
+
+Epoch 89/100, Epoch Accuracy: 93.2750
+Train AUC-ROC: 0.9816, Train F1 Score: 0.9306 , Train Precision: 0.9642, Train Recall: 0.8993
+
+Epoch Testing Accuracy : 90.9000
+Test AUC-ROC: 0.9727, Test F1 Score: 0.9005, Test Precision: 0.9717, Test Recall: 0.8391
+
+Epoch 90/100, Epoch Accuracy: 93.3875
+Train AUC-ROC: 0.9823, Train F1 Score: 0.9318 , Train Precision: 0.9650, Train Recall: 0.9008
+
+Epoch Testing Accuracy : 90.3000
+Test AUC-ROC: 0.9712, Test F1 Score: 0.8947, Test Precision: 0.9581, Test Recall: 0.8391
+
+Epoch 91/100, Epoch Accuracy: 93.1375
+Train AUC-ROC: 0.9825, Train F1 Score: 0.9293 , Train Precision: 0.9619, Train Recall: 0.8988
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9737, Test F1 Score: 0.9042, Test Precision: 0.9589, Test Recall: 0.8554
+
+Epoch 92/100, Epoch Accuracy: 93.1875
+Train AUC-ROC: 0.9824, Train F1 Score: 0.9297 , Train Precision: 0.9636, Train Recall: 0.8981
+
+Epoch Testing Accuracy : 90.2000
+Test AUC-ROC: 0.9723, Test F1 Score: 0.8921, Test Precision: 0.9712, Test Recall: 0.8248
+
+Epoch 93/100, Epoch Accuracy: 93.1250
+Train AUC-ROC: 0.9816, Train F1 Score: 0.9291 , Train Precision: 0.9628, Train Recall: 0.8976
+
+Epoch Testing Accuracy : 90.7000
+Test AUC-ROC: 0.9708, Test F1 Score: 0.8997, Test Precision: 0.9564, Test Recall: 0.8493
+
+Epoch 94/100, Epoch Accuracy: 93.2250
+Train AUC-ROC: 0.9822, Train F1 Score: 0.9301 , Train Precision: 0.9637, Train Recall: 0.8988
+
+Epoch Testing Accuracy : 90.8000
+Test AUC-ROC: 0.9714, Test F1 Score: 0.9011, Test Precision: 0.9544, Test Recall: 0.8534
+
+Epoch 95/100, Epoch Accuracy: 92.8875
+Train AUC-ROC: 0.9809, Train F1 Score: 0.9265 , Train Precision: 0.9619, Train Recall: 0.8936
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9724, Test F1 Score: 0.8957, Test Precision: 0.9604, Test Recall: 0.8391
+
+Epoch 96/100, Epoch Accuracy: 93.1250
+Train AUC-ROC: 0.9810, Train F1 Score: 0.9291 , Train Precision: 0.9618, Train Recall: 0.8986
+
+Epoch Testing Accuracy : 90.7000
+Test AUC-ROC: 0.9704, Test F1 Score: 0.8990, Test Precision: 0.9628, Test Recall: 0.8432
+
+Epoch 97/100, Epoch Accuracy: 92.9500
+Train AUC-ROC: 0.9814, Train F1 Score: 0.9271 , Train Precision: 0.9629, Train Recall: 0.8938
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9704, Test F1 Score: 0.8957, Test Precision: 0.9604, Test Recall: 0.8391
+
+Epoch 98/100, Epoch Accuracy: 93.1125
+Train AUC-ROC: 0.9826, Train F1 Score: 0.9289 , Train Precision: 0.9628, Train Recall: 0.8973
+
+Epoch Testing Accuracy : 90.6000
+Test AUC-ROC: 0.9719, Test F1 Score: 0.8978, Test Precision: 0.9627, Test Recall: 0.8411
+
+Epoch 99/100, Epoch Accuracy: 93.1250
+Train AUC-ROC: 0.9819, Train F1 Score: 0.9291 , Train Precision: 0.9616, Train Recall: 0.8988
+
+Epoch Testing Accuracy : 91.1000
+Test AUC-ROC: 0.9713, Test F1 Score: 0.9023, Test Precision: 0.9786, Test Recall: 0.8371
+
+Epoch 100/100, Epoch Accuracy: 93.2125
+Train AUC-ROC: 0.9823, Train F1 Score: 0.9300 , Train Precision: 0.9632, Train Recall: 0.8991
+
+Epoch Testing Accuracy : 90.4000
+Test AUC-ROC: 0.9694, Test F1 Score: 0.8952, Test Precision: 0.9647, Test Recall: 0.8350

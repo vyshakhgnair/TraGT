@@ -60,9 +60,10 @@ def find_highest_metrics(training_data,type):
         
         return highest_accuracy, highest_auc_roc, highest_f1_score, highest_precision, highest_recall
 
-def generate_report(dataset_name, today_date, highest_accuracy, highest_auc_roc, highest_f1_score, highest_precision, highest_recall,type):
+def generate_report(dataset_name, today_date, highest_accuracy, highest_auc_roc, highest_f1_score, highest_precision, highest_recall,type,file_path):
     if type=="train":
         report = f"Dataset: {dataset_name}\n"
+        report +=f"Log path: {file_path}\n"
         report += f"Date: {today_date}\n\n"
         
         report += "Epoch with highest Train Accuracy:\n"
@@ -111,18 +112,19 @@ def save_report(report, folder_path):
     print(f"Report saved successfully at {file_name}")
 
 def main():
-    file_path = "output/fda/test/test_accuracy_details_2024-04-28_23-12-13.txt"
-    dataset_name = "fda"
+    file_path = "output/logp/test/test_accuracy_details_2024-05-01_00-46-30.txt"
+    dataset_name = "logp"
     type = "test"
+    loss="recon" # bin or recon
     today_date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     
     
     training_data = read_training_data(file_path,type)
     highest_accuracy, highest_auc_roc, highest_f1_score, highest_precision, highest_recall = find_highest_metrics(training_data,type)
     
-    report = generate_report(dataset_name, today_date, highest_accuracy, highest_auc_roc, highest_f1_score, highest_precision, highest_recall,type)
+    report = generate_report(dataset_name, today_date, highest_accuracy, highest_auc_roc, highest_f1_score, highest_precision, highest_recall,type,file_path)
     
-    folder_path = f"Report/{dataset_name}/{type}"
+    folder_path = f"Report/{dataset_name}/{type}/{loss}"
     save_report(report, folder_path)
 
 if __name__ == "__main__":

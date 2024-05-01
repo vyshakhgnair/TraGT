@@ -1,0 +1,18 @@
+Dataset: bace
+Date: 2024-04-30_14-31-57
+
+Epoch with highest Test Accuracy:
+{'Epoch': 38, 'Test Accuracy': 74.3421, 'Test AUC-ROC': 0.7114, 'Test F1 Score': 0.6214, 'Test Precision': 0.7619, 'Test Recall': 0.5246}
+
+Epoch with highest Test AUC-ROC:
+{'Epoch': 1, 'Test Accuracy': 59.8684, 'Test AUC-ROC': 0.7429, 'Test F1 Score': 0.0, 'Test Precision': 0.0, 'Test Recall': 0.0}
+
+Epoch with highest Test F1 Score:
+{'Epoch': 62, 'Test Accuracy': 71.7105, 'Test AUC-ROC': 0.6613, 'Test F1 Score': 0.6261, 'Test Precision': 0.6667, 'Test Recall': 0.5902}
+
+Epoch with highest Test Precision:
+{'Epoch': 38, 'Test Accuracy': 74.3421, 'Test AUC-ROC': 0.7114, 'Test F1 Score': 0.6214, 'Test Precision': 0.7619, 'Test Recall': 0.5246}
+
+Epoch with highest Test Recall:
+{'Epoch': 73, 'Test Accuracy': 67.7632, 'Test AUC-ROC': 0.6844, 'Test F1 Score': 0.6016, 'Test Precision': 0.5968, 'Test Recall': 0.6066}
+
