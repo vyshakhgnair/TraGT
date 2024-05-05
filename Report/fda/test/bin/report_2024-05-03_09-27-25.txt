@@ -1,0 +1,18 @@
+Dataset: fda
+Date: 2024-05-03_09-27-25
+
+Epoch with highest Test Accuracy:
+{'Epoch': 79, 'Test Accuracy': 93.1889, 'Test AUC-ROC': 0.9689, 'Test F1 Score': 0.9337, 'Test Precision': 0.9509, 'Test Recall': 0.9172}
+
+Epoch with highest Test AUC-ROC:
+{'Epoch': 79, 'Test Accuracy': 93.1889, 'Test AUC-ROC': 0.9689, 'Test F1 Score': 0.9337, 'Test Precision': 0.9509, 'Test Recall': 0.9172}
+
+Epoch with highest Test F1 Score:
+{'Epoch': 79, 'Test Accuracy': 93.1889, 'Test AUC-ROC': 0.9689, 'Test F1 Score': 0.9337, 'Test Precision': 0.9509, 'Test Recall': 0.9172}
+
+Epoch with highest Test Precision:
+{'Epoch': 74, 'Test Accuracy': 92.8793, 'Test AUC-ROC': 0.9664, 'Test F1 Score': 0.9301, 'Test Precision': 0.9563, 'Test Recall': 0.9053}
+
+Epoch with highest Test Recall:
+{'Epoch': 4, 'Test Accuracy': 86.6873, 'Test AUC-ROC': 0.9513, 'Test F1 Score': 0.8859, 'Test Precision': 0.8029, 'Test Recall': 0.9882}
+

@@ -16,8 +16,8 @@ def main(data_name,options,type="recon"):
     
     vocab_size = 100
     d_model = 100
-    nhead = 4
-    num_encoder_layers = 3
+    nhead = 2
+    num_encoder_layers = 1
     dim_feedforward = 512
     max_length = 100
     batch_size = 1
@@ -210,6 +210,6 @@ def main(data_name,options,type="recon"):
 
 if __name__ == "__main__":
     options=[True,True,True]
-    data_name='bbbp'
+    data_name='bace_recon'
     main(data_name,options,type="recon")
     

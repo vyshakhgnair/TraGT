@@ -112,10 +112,10 @@ def save_report(report, folder_path):
     print(f"Report saved successfully at {file_name}")
 
 def main():
-    file_path = "output/bace/test/test_accuracy_details_2024-05-01_16-04-26.txt"
-    dataset_name = "bace"
+    file_path = "output/fda/test/test_accuracy_details_2024-05-03_05-16-01.txt"
+    dataset_name = "fda"
     type = "test"
-    loss="recon" # bin or recon
+    loss="bin" # bin or recon
     today_date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     
     

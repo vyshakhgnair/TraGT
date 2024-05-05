@@ -1,0 +1,625 @@
+4HEADS 3 LAYERS BACE TE 
+
+Epoch 1/100, Train Accuracy: 56.1983, Train Loss: 0.7097
+Train AUC-ROC: 0.5668, Train F1 Score: 0.2895, Train Precision: 0.6243, Train Recall: 0.1885
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6413
+Test AUC-ROC: 0.7343, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+
+
+Epoch 2/100, Train Accuracy: 53.4711, Train Loss: 0.6967
+Train AUC-ROC: 0.5349, Train F1 Score: 0.1708, Train Precision: 0.5472, Train Recall: 0.1012
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6230
+Test AUC-ROC: 0.7446, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+
+
+Epoch 3/100, Train Accuracy: 53.3884, Train Loss: 0.6880
+Train AUC-ROC: 0.5792, Train F1 Score: 0.1873, Train Precision: 0.5372, Train Recall: 0.1134
+
+Epoch Testing Accuracy: 69.7368, Test Loss: 0.5720
+Test AUC-ROC: 0.7474, Test F1 Score: 0.4773, Test Precision: 0.7778, Test Recall: 0.3443
+
+Epoch 4/100, Train Accuracy: 59.5041, Train Loss: 0.6504
+Train AUC-ROC: 0.6658, Train F1 Score: 0.4096, Train Precision: 0.6615, Train Recall: 0.2967
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.6680
+Test AUC-ROC: 0.7100, Test F1 Score: 0.5283, Test Precision: 0.6222, Test Recall: 0.4590
+
+Epoch 5/100, Train Accuracy: 67.4380, Train Loss: 0.5955
+Train AUC-ROC: 0.7428, Train F1 Score: 0.5921, Train Precision: 0.7277, Train Recall: 0.4991
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6794
+Test AUC-ROC: 0.6813, Test F1 Score: 0.5405, Test Precision: 0.6000, Test Recall: 0.4918
+
+Epoch 6/100, Train Accuracy: 71.8182, Train Loss: 0.5795
+Train AUC-ROC: 0.7541, Train F1 Score: 0.6680, Train Precision: 0.7555, Train Recall: 0.5986
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.6630
+Test AUC-ROC: 0.6745, Test F1 Score: 0.5094, Test Precision: 0.6000, Test Recall: 0.4426
+
+Epoch 7/100, Train Accuracy: 73.8017, Train Loss: 0.5582
+Train AUC-ROC: 0.7727, Train F1 Score: 0.6937, Train Precision: 0.7771, Train Recall: 0.6265
+
+Epoch Testing Accuracy: 63.1579, Test Loss: 0.7139
+Test AUC-ROC: 0.6455, Test F1 Score: 0.4615, Test Precision: 0.5581, Test Recall: 0.3934
+
+Epoch 8/100, Train Accuracy: 75.1240, Train Loss: 0.5526
+Train AUC-ROC: 0.7792, Train F1 Score: 0.7158, Train Precision: 0.7798, Train Recall: 0.6614
+
+Epoch Testing Accuracy: 63.1579, Test Loss: 0.6945
+Test AUC-ROC: 0.6658, Test F1 Score: 0.4167, Test Precision: 0.5714, Test Recall: 0.3279
+
+Epoch 9/100, Train Accuracy: 73.4711, Train Loss: 0.5534
+Train AUC-ROC: 0.7818, Train F1 Score: 0.6819, Train Precision: 0.7890, Train Recall: 0.6003
+
+Epoch Testing Accuracy: 63.1579, Test Loss: 0.7296
+Test AUC-ROC: 0.6311, Test F1 Score: 0.4400, Test Precision: 0.5641, Test Recall: 0.3607
+
+Epoch 10/100, Train Accuracy: 75.7851, Train Loss: 0.5430
+Train AUC-ROC: 0.7944, Train F1 Score: 0.7279, Train Precision: 0.7778, Train Recall: 0.6841
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.6892
+Test AUC-ROC: 0.6707, Test F1 Score: 0.4854, Test Precision: 0.5952, Test Recall: 0.4098
+
+Epoch 11/100, Train Accuracy: 77.1074, Train Loss: 0.5184
+Train AUC-ROC: 0.8178, Train F1 Score: 0.7452, Train Precision: 0.7879, Train Recall: 0.7068
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.6984
+Test AUC-ROC: 0.6723, Test F1 Score: 0.4752, Test Precision: 0.6000, Test Recall: 0.3934
+
+Epoch 12/100, Train Accuracy: 75.7851, Train Loss: 0.5179
+Train AUC-ROC: 0.8187, Train F1 Score: 0.7196, Train Precision: 0.7966, Train Recall: 0.6562
+
+Epoch Testing Accuracy: 69.0789, Test Loss: 0.6762
+Test AUC-ROC: 0.6873, Test F1 Score: 0.5913, Test Precision: 0.6296, Test Recall: 0.5574
+
+Epoch 13/100, Train Accuracy: 78.4298, Train Loss: 0.4951
+Train AUC-ROC: 0.8335, Train F1 Score: 0.7647, Train Precision: 0.7910, Train Recall: 0.7400
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6901
+Test AUC-ROC: 0.6723, Test F1 Score: 0.5049, Test Precision: 0.6190, Test Recall: 0.4262
+
+Epoch 14/100, Train Accuracy: 78.9256, Train Loss: 0.4844
+Train AUC-ROC: 0.8391, Train F1 Score: 0.7717, Train Precision: 0.7923, Train Recall: 0.7522
+
+Epoch Testing Accuracy: 63.8158, Test Loss: 0.7248
+Test AUC-ROC: 0.6460, Test F1 Score: 0.4554, Test Precision: 0.5750, Test Recall: 0.3770
+
+Epoch 15/100, Train Accuracy: 78.4298, Train Loss: 0.5019
+Train AUC-ROC: 0.8225, Train F1 Score: 0.7612, Train Precision: 0.8000, Train Recall: 0.7260
+
+Epoch Testing Accuracy: 63.1579, Test Loss: 0.7793
+Test AUC-ROC: 0.6087, Test F1 Score: 0.5172, Test Precision: 0.5455, Test Recall: 0.4918
+
+Epoch 16/100, Train Accuracy: 78.5950, Train Loss: 0.4955
+Train AUC-ROC: 0.8272, Train F1 Score: 0.7600, Train Precision: 0.8103, Train Recall: 0.7155
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.7297
+Test AUC-ROC: 0.6433, Test F1 Score: 0.5000, Test Precision: 0.6410, Test Recall: 0.4098
+
+Epoch 17/100, Train Accuracy: 79.4215, Train Loss: 0.4733
+Train AUC-ROC: 0.8431, Train F1 Score: 0.7705, Train Precision: 0.8164, Train Recall: 0.7295
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.7510
+Test AUC-ROC: 0.6393, Test F1 Score: 0.4854, Test Precision: 0.5952, Test Recall: 0.4098
+
+Epoch 18/100, Train Accuracy: 80.2479, Train Loss: 0.4853
+Train AUC-ROC: 0.8332, Train F1 Score: 0.7793, Train Precision: 0.8275, Train Recall: 0.7365
+
+Epoch Testing Accuracy: 61.1842, Test Loss: 0.7649
+Test AUC-ROC: 0.6008, Test F1 Score: 0.4272, Test Precision: 0.5238, Test Recall: 0.3607
+
+Epoch 19/100, Train Accuracy: 80.9917, Train Loss: 0.4746
+Train AUC-ROC: 0.8374, Train F1 Score: 0.7935, Train Precision: 0.8170, Train Recall: 0.7714
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.7883
+Test AUC-ROC: 0.5934, Test F1 Score: 0.5357, Test Precision: 0.5882, Test Recall: 0.4918
+
+Epoch 20/100, Train Accuracy: 81.4050, Train Loss: 0.4660
+Train AUC-ROC: 0.8448, Train F1 Score: 0.8011, Train Precision: 0.8118, Train Recall: 0.7906
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.7239
+Test AUC-ROC: 0.6296, Test F1 Score: 0.4800, Test Precision: 0.6154, Test Recall: 0.3934
+
+Epoch 21/100, Train Accuracy: 79.1736, Train Loss: 0.4772
+Train AUC-ROC: 0.8456, Train F1 Score: 0.7692, Train Precision: 0.8092, Train Recall: 0.7330
+
+Epoch Testing Accuracy: 63.1579, Test Loss: 0.7608
+Test AUC-ROC: 0.5709, Test F1 Score: 0.4510, Test Precision: 0.5610, Test Recall: 0.3770
+
+Epoch 22/100, Train Accuracy: 80.4959, Train Loss: 0.4654
+Train AUC-ROC: 0.8515, Train F1 Score: 0.7843, Train Precision: 0.8234, Train Recall: 0.7487
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.7489
+Test AUC-ROC: 0.6534, Test F1 Score: 0.4490, Test Precision: 0.5946, Test Recall: 0.3607
+
+Epoch 23/100, Train Accuracy: 81.7355, Train Loss: 0.4499
+Train AUC-ROC: 0.8624, Train F1 Score: 0.8004, Train Precision: 0.8296, Train Recall: 0.7731
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.7317
+Test AUC-ROC: 0.6482, Test F1 Score: 0.4130, Test Precision: 0.6129, Test Recall: 0.3115
+
+Epoch 24/100, Train Accuracy: 81.2397, Train Loss: 0.4486
+Train AUC-ROC: 0.8676, Train F1 Score: 0.7942, Train Precision: 0.8264, Train Recall: 0.7644
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.8157
+Test AUC-ROC: 0.6175, Test F1 Score: 0.4808, Test Precision: 0.5814, Test Recall: 0.4098
+
+Epoch 25/100, Train Accuracy: 81.0744, Train Loss: 0.4491
+Train AUC-ROC: 0.8635, Train F1 Score: 0.7916, Train Precision: 0.8270, Train Recall: 0.7592
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7618
+Test AUC-ROC: 0.6466, Test F1 Score: 0.4742, Test Precision: 0.6389, Test Recall: 0.3770
+
+Epoch 26/100, Train Accuracy: 81.7355, Train Loss: 0.4372
+Train AUC-ROC: 0.8700, Train F1 Score: 0.7956, Train Precision: 0.8465, Train Recall: 0.7504
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.8079
+Test AUC-ROC: 0.6039, Test F1 Score: 0.4752, Test Precision: 0.6000, Test Recall: 0.3934
+
+Epoch 27/100, Train Accuracy: 82.3140, Train Loss: 0.4313
+Train AUC-ROC: 0.8714, Train F1 Score: 0.8029, Train Precision: 0.8499, Train Recall: 0.7609
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.7515
+Test AUC-ROC: 0.6159, Test F1 Score: 0.4800, Test Precision: 0.6154, Test Recall: 0.3934
+
+Epoch 28/100, Train Accuracy: 82.3140, Train Loss: 0.4301
+Train AUC-ROC: 0.8718, Train F1 Score: 0.8037, Train Precision: 0.8472, Train Recall: 0.7644
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.7787
+Test AUC-ROC: 0.6129, Test F1 Score: 0.5192, Test Precision: 0.6279, Test Recall: 0.4426
+
+Epoch 29/100, Train Accuracy: 81.8182, Train Loss: 0.4364
+Train AUC-ROC: 0.8693, Train F1 Score: 0.8004, Train Precision: 0.8336, Train Recall: 0.7696
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.7920
+Test AUC-ROC: 0.6264, Test F1 Score: 0.4375, Test Precision: 0.6000, Test Recall: 0.3443
+
+Epoch 30/100, Train Accuracy: 83.0579, Train Loss: 0.4197
+Train AUC-ROC: 0.8788, Train F1 Score: 0.8100, Train Precision: 0.8636, Train Recall: 0.7627
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7537
+Test AUC-ROC: 0.6485, Test F1 Score: 0.5143, Test Precision: 0.6136, Test Recall: 0.4426
+
+Epoch 31/100, Train Accuracy: 83.7190, Train Loss: 0.4125
+Train AUC-ROC: 0.8826, Train F1 Score: 0.8198, Train Precision: 0.8615, Train Recall: 0.7818
+
+Epoch Testing Accuracy: 68.4211, Test Loss: 0.7806
+Test AUC-ROC: 0.6206, Test F1 Score: 0.5556, Test Precision: 0.6383, Test Recall: 0.4918
+
+Epoch 32/100, Train Accuracy: 80.3306, Train Loss: 0.4475
+Train AUC-ROC: 0.8665, Train F1 Score: 0.7746, Train Precision: 0.8468, Train Recall: 0.7138
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.7868
+Test AUC-ROC: 0.6293, Test F1 Score: 0.5333, Test Precision: 0.6364, Test Recall: 0.4590
+
+Epoch 33/100, Train Accuracy: 82.2314, Train Loss: 0.4293
+Train AUC-ROC: 0.8784, Train F1 Score: 0.7989, Train Precision: 0.8609, Train Recall: 0.7452
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.7909
+Test AUC-ROC: 0.6165, Test F1 Score: 0.5243, Test Precision: 0.6429, Test Recall: 0.4426
+
+Epoch 34/100, Train Accuracy: 81.7355, Train Loss: 0.4318
+Train AUC-ROC: 0.8749, Train F1 Score: 0.7959, Train Precision: 0.8451, Train Recall: 0.7522
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.8002
+Test AUC-ROC: 0.6048, Test F1 Score: 0.5094, Test Precision: 0.6000, Test Recall: 0.4426
+
+Epoch 35/100, Train Accuracy: 85.2893, Train Loss: 0.3950
+Train AUC-ROC: 0.8882, Train F1 Score: 0.8385, Train Precision: 0.8733, Train Recall: 0.8063
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.8415
+Test AUC-ROC: 0.5689, Test F1 Score: 0.4600, Test Precision: 0.5897, Test Recall: 0.3770
+
+Epoch 36/100, Train Accuracy: 83.2231, Train Loss: 0.4210
+Train AUC-ROC: 0.8774, Train F1 Score: 0.8186, Train Precision: 0.8388, Train Recall: 0.7993
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7771
+Test AUC-ROC: 0.6058, Test F1 Score: 0.5565, Test Precision: 0.5926, Test Recall: 0.5246
+
+Epoch 37/100, Train Accuracy: 82.2314, Train Loss: 0.4346
+Train AUC-ROC: 0.8666, Train F1 Score: 0.8040, Train Precision: 0.8416, Train Recall: 0.7696
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.7639
+Test AUC-ROC: 0.6145, Test F1 Score: 0.5138, Test Precision: 0.5833, Test Recall: 0.4590
+
+Epoch 38/100, Train Accuracy: 84.4628, Train Loss: 0.4065
+Train AUC-ROC: 0.8826, Train F1 Score: 0.8315, Train Precision: 0.8545, Train Recall: 0.8098
+
+Epoch Testing Accuracy: 68.4211, Test Loss: 0.7871
+Test AUC-ROC: 0.6242, Test F1 Score: 0.5472, Test Precision: 0.6444, Test Recall: 0.4754
+
+Epoch 39/100, Train Accuracy: 83.8843, Train Loss: 0.4165
+Train AUC-ROC: 0.8738, Train F1 Score: 0.8219, Train Precision: 0.8621, Train Recall: 0.7853
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.7764
+Test AUC-ROC: 0.6507, Test F1 Score: 0.5225, Test Precision: 0.5800, Test Recall: 0.4754
+
+Epoch 40/100, Train Accuracy: 83.9669, Train Loss: 0.4077
+Train AUC-ROC: 0.8791, Train F1 Score: 0.8280, Train Precision: 0.8414, Train Recall: 0.8150
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.7923
+Test AUC-ROC: 0.6525, Test F1 Score: 0.5310, Test Precision: 0.5769, Test Recall: 0.4918
+
+Epoch 41/100, Train Accuracy: 84.8760, Train Loss: 0.3928
+Train AUC-ROC: 0.8877, Train F1 Score: 0.8353, Train Precision: 0.8625, Train Recall: 0.8098
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7659
+Test AUC-ROC: 0.6386, Test F1 Score: 0.5234, Test Precision: 0.6087, Test Recall: 0.4590
+
+Epoch 42/100, Train Accuracy: 84.4628, Train Loss: 0.3945
+Train AUC-ROC: 0.8905, Train F1 Score: 0.8288, Train Precision: 0.8667, Train Recall: 0.7941
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.7441
+Test AUC-ROC: 0.6541, Test F1 Score: 0.5149, Test Precision: 0.6500, Test Recall: 0.4262
+
+Epoch 43/100, Train Accuracy: 84.1322, Train Loss: 0.4106
+Train AUC-ROC: 0.8814, Train F1 Score: 0.8304, Train Precision: 0.8408, Train Recall: 0.8202
+
+Epoch Testing Accuracy: 69.0789, Test Loss: 0.7652
+Test AUC-ROC: 0.6366, Test F1 Score: 0.5766, Test Precision: 0.6400, Test Recall: 0.5246
+
+Epoch 44/100, Train Accuracy: 84.5455, Train Loss: 0.4141
+Train AUC-ROC: 0.8684, Train F1 Score: 0.8323, Train Precision: 0.8561, Train Recall: 0.8098
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.7711
+Test AUC-ROC: 0.6383, Test F1 Score: 0.4752, Test Precision: 0.6000, Test Recall: 0.3934
+
+Epoch 45/100, Train Accuracy: 84.0496, Train Loss: 0.4068
+Train AUC-ROC: 0.8801, Train F1 Score: 0.8275, Train Precision: 0.8480, Train Recall: 0.8080
+
+Epoch Testing Accuracy: 61.8421, Test Loss: 0.8622
+Test AUC-ROC: 0.6015, Test F1 Score: 0.5167, Test Precision: 0.5254, Test Recall: 0.5082
+
+Epoch 46/100, Train Accuracy: 82.7273, Train Loss: 0.4360
+Train AUC-ROC: 0.8621, Train F1 Score: 0.8149, Train Precision: 0.8273, Train Recall: 0.8028
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.7699
+Test AUC-ROC: 0.6741, Test F1 Score: 0.5536, Test Precision: 0.6078, Test Recall: 0.5082
+
+Epoch 47/100, Train Accuracy: 84.4628, Train Loss: 0.4133
+Train AUC-ROC: 0.8771, Train F1 Score: 0.8351, Train Precision: 0.8395, Train Recall: 0.8307
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7858
+Test AUC-ROC: 0.6804, Test F1 Score: 0.5565, Test Precision: 0.5926, Test Recall: 0.5246
+
+Epoch 48/100, Train Accuracy: 82.6446, Train Loss: 0.4490
+Train AUC-ROC: 0.8597, Train F1 Score: 0.8128, Train Precision: 0.8306, Train Recall: 0.7958
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.7627
+Test AUC-ROC: 0.6647, Test F1 Score: 0.5091, Test Precision: 0.5714, Test Recall: 0.4590
+
+Epoch 49/100, Train Accuracy: 81.3223, Train Loss: 0.4602
+Train AUC-ROC: 0.8443, Train F1 Score: 0.8052, Train Precision: 0.7956, Train Recall: 0.8150
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.7185
+Test AUC-ROC: 0.6682, Test F1 Score: 0.5586, Test Precision: 0.6200, Test Recall: 0.5082
+
+Epoch 50/100, Train Accuracy: 82.1488, Train Loss: 0.4406
+Train AUC-ROC: 0.8697, Train F1 Score: 0.8151, Train Precision: 0.8000, Train Recall: 0.8307
+
+Epoch Testing Accuracy: 51.3158, Test Loss: 0.8758
+Test AUC-ROC: 0.5277, Test F1 Score: 0.4714, Test Precision: 0.4177, Test Recall: 0.5410
+
+Epoch 51/100, Train Accuracy: 76.8595, Train Loss: 0.5048
+Train AUC-ROC: 0.8253, Train F1 Score: 0.7500, Train Precision: 0.7678, Train Recall: 0.7330
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.8092
+Test AUC-ROC: 0.5458, Test F1 Score: 0.4696, Test Precision: 0.5000, Test Recall: 0.4426
+
+Epoch 52/100, Train Accuracy: 77.7686, Train Loss: 0.4890
+Train AUC-ROC: 0.8387, Train F1 Score: 0.7659, Train Precision: 0.7639, Train Recall: 0.7679
+
+Epoch Testing Accuracy: 61.1842, Test Loss: 0.7825
+Test AUC-ROC: 0.5986, Test F1 Score: 0.4957, Test Precision: 0.5179, Test Recall: 0.4754
+
+Epoch 53/100, Train Accuracy: 78.1818, Train Loss: 0.4883
+Train AUC-ROC: 0.8334, Train F1 Score: 0.7700, Train Precision: 0.7687, Train Recall: 0.7714
+
+Epoch Testing Accuracy: 58.5526, Test Loss: 0.8276
+Test AUC-ROC: 0.5446, Test F1 Score: 0.4425, Test Precision: 0.4808, Test Recall: 0.4098
+
+Epoch 54/100, Train Accuracy: 76.1983, Train Loss: 0.5059
+Train AUC-ROC: 0.8243, Train F1 Score: 0.7433, Train Precision: 0.7596, Train Recall: 0.7277
+
+Epoch Testing Accuracy: 62.5000, Test Loss: 0.7687
+Test AUC-ROC: 0.5457, Test F1 Score: 0.4865, Test Precision: 0.5400, Test Recall: 0.4426
+
+Epoch 55/100, Train Accuracy: 74.5455, Train Loss: 0.5234
+Train AUC-ROC: 0.8106, Train F1 Score: 0.7220, Train Precision: 0.7477, Train Recall: 0.6981
+
+Epoch Testing Accuracy: 61.8421, Test Loss: 0.7751
+Test AUC-ROC: 0.5532, Test F1 Score: 0.4912, Test Precision: 0.5283, Test Recall: 0.4590
+
+Epoch 56/100, Train Accuracy: 73.6364, Train Loss: 0.5216
+Train AUC-ROC: 0.8108, Train F1 Score: 0.7134, Train Precision: 0.7352, Train Recall: 0.6928
+
+Epoch Testing Accuracy: 60.5263, Test Loss: 0.7819
+Test AUC-ROC: 0.5732, Test F1 Score: 0.4737, Test Precision: 0.5094, Test Recall: 0.4426
+
+Epoch 57/100, Train Accuracy: 72.8099, Train Loss: 0.5347
+Train AUC-ROC: 0.7992, Train F1 Score: 0.6928, Train Precision: 0.7450, Train Recall: 0.6475
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6844
+Test AUC-ROC: 0.6239, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+Epoch 58/100, Train Accuracy: 64.4628, Train Loss: 0.6079
+Train AUC-ROC: 0.7300, Train F1 Score: 0.5558, Train Precision: 0.6810, Train Recall: 0.4695
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6807
+Test AUC-ROC: 0.6130, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+Epoch 59/100, Train Accuracy: 73.8843, Train Loss: 0.5454
+Train AUC-ROC: 0.8038, Train F1 Score: 0.6979, Train Precision: 0.7717, Train Recall: 0.6370
+
+Epoch Testing Accuracy: 69.0789, Test Loss: 0.6714
+Test AUC-ROC: 0.6691, Test F1 Score: 0.5688, Test Precision: 0.6458, Test Recall: 0.5082
+
+Epoch 60/100, Train Accuracy: 79.6694, Train Loss: 0.4648
+Train AUC-ROC: 0.8525, Train F1 Score: 0.7827, Train Precision: 0.7925, Train Recall: 0.7731
+
+Epoch Testing Accuracy: 71.0526, Test Loss: 0.6806
+Test AUC-ROC: 0.6772, Test F1 Score: 0.6071, Test Precision: 0.6667, Test Recall: 0.5574
+
+Epoch 61/100, Train Accuracy: 81.0744, Train Loss: 0.4538
+Train AUC-ROC: 0.8610, Train F1 Score: 0.7893, Train Precision: 0.8346, Train Recall: 0.7487
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6985
+Test AUC-ROC: 0.6703, Test F1 Score: 0.5149, Test Precision: 0.6500, Test Recall: 0.4262
+
+Epoch 62/100, Train Accuracy: 79.0909, Train Loss: 0.4725
+Train AUC-ROC: 0.8522, Train F1 Score: 0.7723, Train Precision: 0.7974, Train Recall: 0.7487
+
+Epoch Testing Accuracy: 71.7105, Test Loss: 0.6402
+Test AUC-ROC: 0.6934, Test F1 Score: 0.5825, Test Precision: 0.7143, Test Recall: 0.4918
+
+Epoch 63/100, Train Accuracy: 80.1653, Train Loss: 0.4740
+Train AUC-ROC: 0.8488, Train F1 Score: 0.7802, Train Precision: 0.8208, Train Recall: 0.7435
+
+Epoch Testing Accuracy: 69.0789, Test Loss: 0.6544
+Test AUC-ROC: 0.6977, Test F1 Score: 0.5983, Test Precision: 0.6250, Test Recall: 0.5738
+
+Epoch 64/100, Train Accuracy: 79.0083, Train Loss: 0.4840
+Train AUC-ROC: 0.8423, Train F1 Score: 0.7825, Train Precision: 0.7681, Train Recall: 0.7976
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7005
+Test AUC-ROC: 0.6467, Test F1 Score: 0.5143, Test Precision: 0.6136, Test Recall: 0.4426
+
+Epoch 65/100, Train Accuracy: 78.7603, Train Loss: 0.4914
+Train AUC-ROC: 0.8349, Train F1 Score: 0.7736, Train Precision: 0.7811, Train Recall: 0.7661
+
+Epoch Testing Accuracy: 68.4211, Test Loss: 0.6729
+Test AUC-ROC: 0.6772, Test F1 Score: 0.5636, Test Precision: 0.6327, Test Recall: 0.5082
+
+Epoch 66/100, Train Accuracy: 77.1901, Train Loss: 0.5127
+Train AUC-ROC: 0.8209, Train F1 Score: 0.7579, Train Precision: 0.7619, Train Recall: 0.7539
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6594
+Test AUC-ROC: 0.6647, Test F1 Score: 0.5421, Test Precision: 0.6304, Test Recall: 0.4754
+
+Epoch 67/100, Train Accuracy: 77.9339, Train Loss: 0.4945
+Train AUC-ROC: 0.8280, Train F1 Score: 0.7635, Train Precision: 0.7752, Train Recall: 0.7522
+
+Epoch Testing Accuracy: 61.8421, Test Loss: 0.7225
+Test AUC-ROC: 0.6384, Test F1 Score: 0.5606, Test Precision: 0.5211, Test Recall: 0.6066
+
+Epoch 68/100, Train Accuracy: 76.8595, Train Loss: 0.5215
+Train AUC-ROC: 0.8173, Train F1 Score: 0.7720, Train Precision: 0.7237, Train Recall: 0.8272
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.6895
+Test AUC-ROC: 0.6456, Test F1 Score: 0.5833, Test Precision: 0.5932, Test Recall: 0.5738
+
+Epoch 69/100, Train Accuracy: 75.4545, Train Loss: 0.5170
+Train AUC-ROC: 0.8166, Train F1 Score: 0.7374, Train Precision: 0.7473, Train Recall: 0.7277
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6699
+Test AUC-ROC: 0.6727, Test F1 Score: 0.6016, Test Precision: 0.5968, Test Recall: 0.6066
+
+Epoch 70/100, Train Accuracy: 79.1736, Train Loss: 0.5011
+Train AUC-ROC: 0.8331, Train F1 Score: 0.7910, Train Precision: 0.7536, Train Recall: 0.8325
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.7288
+Test AUC-ROC: 0.6372, Test F1 Score: 0.5405, Test Precision: 0.6000, Test Recall: 0.4918
+
+Epoch 71/100, Train Accuracy: 77.9339, Train Loss: 0.5088
+Train AUC-ROC: 0.8194, Train F1 Score: 0.7684, Train Precision: 0.7638, Train Recall: 0.7731
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.6978
+Test AUC-ROC: 0.6529, Test F1 Score: 0.5273, Test Precision: 0.5918, Test Recall: 0.4754
+
+Epoch 72/100, Train Accuracy: 77.5207, Train Loss: 0.5022
+Train AUC-ROC: 0.8301, Train F1 Score: 0.7655, Train Precision: 0.7564, Train Recall: 0.7749
+
+Epoch Testing Accuracy: 62.5000, Test Loss: 0.7144
+Test AUC-ROC: 0.6467, Test F1 Score: 0.4956, Test Precision: 0.5385, Test Recall: 0.4590
+
+Epoch 73/100, Train Accuracy: 78.3471, Train Loss: 0.4970
+Train AUC-ROC: 0.8344, Train F1 Score: 0.7722, Train Precision: 0.7695, Train Recall: 0.7749
+
+Epoch Testing Accuracy: 63.8158, Test Loss: 0.7111
+Test AUC-ROC: 0.6347, Test F1 Score: 0.5217, Test Precision: 0.5556, Test Recall: 0.4918
+
+Epoch 74/100, Train Accuracy: 78.5124, Train Loss: 0.4924
+Train AUC-ROC: 0.8340, Train F1 Score: 0.7679, Train Precision: 0.7861, Train Recall: 0.7504
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.6802
+Test AUC-ROC: 0.6649, Test F1 Score: 0.5225, Test Precision: 0.5800, Test Recall: 0.4754
+
+Epoch 75/100, Train Accuracy: 79.6694, Train Loss: 0.4774
+Train AUC-ROC: 0.8433, Train F1 Score: 0.7846, Train Precision: 0.7873, Train Recall: 0.7818
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.6890
+Test AUC-ROC: 0.6680, Test F1 Score: 0.5536, Test Precision: 0.6078, Test Recall: 0.5082
+
+Epoch 76/100, Train Accuracy: 78.3471, Train Loss: 0.4943
+Train AUC-ROC: 0.8308, Train F1 Score: 0.7772, Train Precision: 0.7579, Train Recall: 0.7976
+
+Epoch Testing Accuracy: 67.1053, Test Loss: 0.6812
+Test AUC-ROC: 0.6591, Test F1 Score: 0.5000, Test Precision: 0.6410, Test Recall: 0.4098
+
+Epoch 77/100, Train Accuracy: 73.4711, Train Loss: 0.5278
+Train AUC-ROC: 0.8082, Train F1 Score: 0.7084, Train Precision: 0.7386, Train Recall: 0.6806
+
+Epoch Testing Accuracy: 69.7368, Test Loss: 0.5912
+Test AUC-ROC: 0.7366, Test F1 Score: 0.6230, Test Precision: 0.6230, Test Recall: 0.6230
+
+Epoch 78/100, Train Accuracy: 69.5868, Train Loss: 0.5547
+Train AUC-ROC: 0.7819, Train F1 Score: 0.6618, Train Precision: 0.6990, Train Recall: 0.6283
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6301
+Test AUC-ROC: 0.6950, Test F1 Score: 0.5854, Test Precision: 0.5806, Test Recall: 0.5902
+
+Epoch 79/100, Train Accuracy: 74.9587, Train Loss: 0.5317
+Train AUC-ROC: 0.8059, Train F1 Score: 0.7381, Train Precision: 0.7312, Train Recall: 0.7452
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.6648
+Test AUC-ROC: 0.6595, Test F1 Score: 0.4906, Test Precision: 0.5778, Test Recall: 0.4262
+
+Epoch 80/100, Train Accuracy: 76.7769, Train Loss: 0.5108
+Train AUC-ROC: 0.8231, Train F1 Score: 0.7533, Train Precision: 0.7580, Train Recall: 0.7487
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6741
+Test AUC-ROC: 0.6588, Test F1 Score: 0.5487, Test Precision: 0.5962, Test Recall: 0.5082
+
+Epoch 81/100, Train Accuracy: 74.3802, Train Loss: 0.5531
+Train AUC-ROC: 0.7876, Train F1 Score: 0.7097, Train Precision: 0.7657, Train Recall: 0.6614
+
+Epoch Testing Accuracy: 63.1579, Test Loss: 0.6970
+Test AUC-ROC: 0.6370, Test F1 Score: 0.4615, Test Precision: 0.5581, Test Recall: 0.3934
+
+Epoch 82/100, Train Accuracy: 73.1405, Train Loss: 0.5558
+Train AUC-ROC: 0.7835, Train F1 Score: 0.6925, Train Precision: 0.7562, Train Recall: 0.6387
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6709
+Test AUC-ROC: 0.6593, Test F1 Score: 0.4848, Test Precision: 0.6316, Test Recall: 0.3934
+
+Epoch 83/100, Train Accuracy: 72.9752, Train Loss: 0.5612
+Train AUC-ROC: 0.7787, Train F1 Score: 0.6969, Train Precision: 0.7431, Train Recall: 0.6562
+
+Epoch Testing Accuracy: 61.8421, Test Loss: 0.6980
+Test AUC-ROC: 0.6608, Test F1 Score: 0.5972, Test Precision: 0.5181, Test Recall: 0.7049
+
+Epoch 84/100, Train Accuracy: 59.1736, Train Loss: 0.6578
+Train AUC-ROC: 0.6469, Train F1 Score: 0.4048, Train Precision: 0.6537, Train Recall: 0.2932
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6621
+Test AUC-ROC: 0.6876, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+Epoch 85/100, Train Accuracy: 65.1240, Train Loss: 0.5843
+Train AUC-ROC: 0.7520, Train F1 Score: 0.5558, Train Precision: 0.7003, Train Recall: 0.4607
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6555
+Test AUC-ROC: 0.7017, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+Epoch 86/100, Train Accuracy: 73.0579, Train Loss: 0.5578
+Train AUC-ROC: 0.7789, Train F1 Score: 0.7079, Train Precision: 0.7274, Train Recall: 0.6894
+
+Epoch Testing Accuracy: 71.7105, Test Loss: 0.6034
+Test AUC-ROC: 0.7395, Test F1 Score: 0.5567, Test Precision: 0.7500, Test Recall: 0.4426
+
+Epoch 87/100, Train Accuracy: 73.3884, Train Loss: 0.5436
+Train AUC-ROC: 0.7958, Train F1 Score: 0.7007, Train Precision: 0.7495, Train Recall: 0.6579
+
+Epoch Testing Accuracy: 68.4211, Test Loss: 0.6500
+Test AUC-ROC: 0.6974, Test F1 Score: 0.5862, Test Precision: 0.6182, Test Recall: 0.5574
+
+Epoch 88/100, Train Accuracy: 72.7273, Train Loss: 0.5467
+Train AUC-ROC: 0.7921, Train F1 Score: 0.7059, Train Precision: 0.7213, Train Recall: 0.6911
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6630
+Test AUC-ROC: 0.6637, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+Epoch 89/100, Train Accuracy: 66.3636, Train Loss: 0.6076
+Train AUC-ROC: 0.7289, Train F1 Score: 0.5885, Train Precision: 0.6995, Train Recall: 0.5079
+
+Epoch Testing Accuracy: 59.8684, Test Loss: 0.6753
+Test AUC-ROC: 0.6610, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000
+
+/usr/local/lib/python3.10/dist-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+Epoch 90/100, Train Accuracy: 54.0496, Train Loss: 0.6821
+Train AUC-ROC: 0.5882, Train F1 Score: 0.2034, Train Precision: 0.5680, Train Recall: 0.1239
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6540
+Test AUC-ROC: 0.7065, Test F1 Score: 0.5920, Test Precision: 0.5781, Test Recall: 0.6066
+
+Epoch 91/100, Train Accuracy: 70.4132, Train Loss: 0.5856
+Train AUC-ROC: 0.7524, Train F1 Score: 0.6518, Train Precision: 0.7363, Train Recall: 0.5846
+
+Epoch Testing Accuracy: 65.7895, Test Loss: 0.7013
+Test AUC-ROC: 0.6399, Test F1 Score: 0.3953, Test Precision: 0.6800, Test Recall: 0.2787
+
+Epoch 92/100, Train Accuracy: 75.5372, Train Loss: 0.5366
+Train AUC-ROC: 0.8014, Train F1 Score: 0.7417, Train Precision: 0.7417, Train Recall: 0.7417
+
+Epoch Testing Accuracy: 63.8158, Test Loss: 0.7319
+Test AUC-ROC: 0.6484, Test F1 Score: 0.3820, Test Precision: 0.6071, Test Recall: 0.2787
+
+Epoch 93/100, Train Accuracy: 75.9504, Train Loss: 0.5309
+Train AUC-ROC: 0.8064, Train F1 Score: 0.7454, Train Precision: 0.7474, Train Recall: 0.7435
+
+Epoch Testing Accuracy: 57.8947, Test Loss: 0.7321
+Test AUC-ROC: 0.6033, Test F1 Score: 0.4074, Test Precision: 0.4681, Test Recall: 0.3607
+
+Epoch 94/100, Train Accuracy: 75.8678, Train Loss: 0.5273
+Train AUC-ROC: 0.8091, Train F1 Score: 0.7509, Train Precision: 0.7346, Train Recall: 0.7679
+
+Epoch Testing Accuracy: 65.1316, Test Loss: 0.7117
+Test AUC-ROC: 0.6296, Test F1 Score: 0.5310, Test Precision: 0.5769, Test Recall: 0.4918
+
+Epoch 95/100, Train Accuracy: 76.0331, Train Loss: 0.5069
+Train AUC-ROC: 0.8213, Train F1 Score: 0.7491, Train Precision: 0.7427, Train Recall: 0.7557
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6822
+Test AUC-ROC: 0.6727, Test F1 Score: 0.5882, Test Precision: 0.6034, Test Recall: 0.5738
+
+Epoch 96/100, Train Accuracy: 78.5124, Train Loss: 0.4913
+Train AUC-ROC: 0.8362, Train F1 Score: 0.7770, Train Precision: 0.7639, Train Recall: 0.7906
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6696
+Test AUC-ROC: 0.6822, Test F1 Score: 0.5586, Test Precision: 0.6200, Test Recall: 0.5082
+
+Epoch 97/100, Train Accuracy: 74.3802, Train Loss: 0.5363
+Train AUC-ROC: 0.8015, Train F1 Score: 0.7081, Train Precision: 0.7689, Train Recall: 0.6562
+
+Epoch Testing Accuracy: 64.4737, Test Loss: 0.7486
+Test AUC-ROC: 0.6826, Test F1 Score: 0.4000, Test Precision: 0.6207, Test Recall: 0.2951
+
+Epoch 98/100, Train Accuracy: 74.8760, Train Loss: 0.5547
+Train AUC-ROC: 0.7866, Train F1 Score: 0.7159, Train Precision: 0.7706, Train Recall: 0.6684
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6616
+Test AUC-ROC: 0.7092, Test F1 Score: 0.5333, Test Precision: 0.6364, Test Recall: 0.4590
+
+Epoch 99/100, Train Accuracy: 75.7025, Train Loss: 0.5418
+Train AUC-ROC: 0.7970, Train F1 Score: 0.7380, Train Precision: 0.7541, Train Recall: 0.7225
+
+Epoch Testing Accuracy: 67.7632, Test Loss: 0.6975
+Test AUC-ROC: 0.6674, Test F1 Score: 0.5812, Test Precision: 0.6071, Test Recall: 0.5574
+
+Epoch 100/100, Train Accuracy: 76.4463, Train Loss: 0.5292
+Train AUC-ROC: 0.8039, Train F1 Score: 0.7485, Train Precision: 0.7571, Train Recall: 0.7400
+
+Epoch Testing Accuracy: 66.4474, Test Loss: 0.6813
+Test AUC-ROC: 0.6905, Test F1 Score: 0.5565, Test Precision: 0.5926, Test Recall: 0.5246
+
+

@@ -9,12 +9,17 @@ class TransformerModel(nn.Module):
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.transformer_encoder = nn.TransformerEncoder(nn.TransformerEncoderLayer(d_model=d_model, nhead=nhead, dim_feedforward=dim_feedforward), num_layers=num_encoder_layers)
         self.fc = nn.Linear(d_model, 1)
+        self.dropout = nn.Dropout(p=0.5)
+        
 
     def forward(self, x):
         x = self.embedding(x).to(self.device)
         x = torch.transpose(x, 0, 1).to(self.device)
         x = self.transformer_encoder(x).to(self.device)
-        x = torch.mean(x, dim=0).to(self.device)
-        x = self.fc(x).to(self.device)
+        #x = torch.mean(x, dim=0).to(self.device)
+        # x = self.fc(x).to(self.device)
+        X = torch.dropout(x, p=0.5, train=self.training).to(self.device)
+        x = torch.relu(x).to(self.device)
+        x = self.dropout(x).to(self.device)
         x = x.mean(dim=0, keepdim=True).to(self.device)
         return x

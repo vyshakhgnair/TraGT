@@ -1,0 +1,18 @@
+Dataset: bbbp
+Date: 2024-05-03_00-20-01
+
+Epoch with highest Test Accuracy:
+{'Epoch': 37, 'Test Accuracy': 92.7461, 'Test AUC-ROC': 0.9618, 'Test F1 Score': 0.953, 'Test Precision': 0.9404, 'Test Recall': 0.966}
+
+Epoch with highest Test AUC-ROC:
+{'Epoch': 5, 'Test Accuracy': 90.1554, 'Test AUC-ROC': 0.9722, 'Test F1 Score': 0.9373, 'Test Precision': 0.9103, 'Test Recall': 0.966}
+
+Epoch with highest Test F1 Score:
+{'Epoch': 37, 'Test Accuracy': 92.7461, 'Test AUC-ROC': 0.9618, 'Test F1 Score': 0.953, 'Test Precision': 0.9404, 'Test Recall': 0.966}
+    
+Epoch with highest Test Precision:
+{'Epoch': 18, 'Test Accuracy': 90.6736, 'Test AUC-ROC': 0.9599, 'Test F1 Score': 0.9375, 'Test Precision': 0.9574, 'Test Recall': 0.9184}
+
+Epoch with highest Test Recall:
+{'Epoch': 1, 'Test Accuracy': 76.1658, 'Test AUC-ROC': 0.8818, 'Test F1 Score': 0.8647, 'Test Precision': 0.7617, 'Test Recall': 1.0}
+

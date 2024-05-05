@@ -16,11 +16,10 @@ def main(data_name,options):
     
     vocab_size = 100
     d_model = 100
-    nhead = 4
+    nhead = 2
     num_encoder_layers = 3
     dim_feedforward = 512
     max_length = 100
-    batch_size = 1
     num_epochs = 100
 
 
@@ -50,7 +49,7 @@ def main(data_name,options):
     test_dataset = CustomDataset(data_list_test, test_data['sequence'])
     
     if options[0]:
-        graph_model = Graph_Transformer(in_channels=input_dim_train, hidden_channels_1=64,hidden_channels_2=32, out_channels=1, heads=4).to(device)
+        graph_model = Graph_Transformer(in_channels=input_dim_train, hidden_channels=64, out_channels=1, heads=4).to(device)
     if options[1]:
         sequence_model = TransformerModel(vocab_size, d_model, nhead, num_encoder_layers, dim_feedforward).to(device)
     
@@ -147,10 +146,8 @@ def main(data_name,options):
             
             true_labels_train = np.concatenate(true_labels_train)
             pred_probs_train = np.concatenate(pred_probs_train)
-
-            # Replace NaN values with 0
-            pred_probs_train = np.nan_to_num(pred_probs_train, nan=0)
-
+            
+            
             #print(true_labels_train,pred_probs_train)
             precision_train = precision_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
             recall_train = recall_score(true_labels_train, (pred_probs_train >= 0.5).astype(int))
@@ -199,17 +196,17 @@ def main(data_name,options):
             recall_test = recall_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
             auc_roc_test = roc_auc_score(true_labels_test, pred_probs_test)
             f1_test = f1_score(true_labels_test, (pred_probs_test >= 0.5).astype(int))
+            
             print(f"Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}, Test Precision: {precision_test:.4f}, Test Recall: {recall_test:.4f}\n")
             file_test.write(f'Epoch {epoch + 1}/{num_epochs}, Test Accuracy: {epoch_test_accuracy:.4f},Test AUC-ROC: {auc_roc_test:.4f}, Test F1 Score: {f1_test:.4f}, Test Precision: {precision_test:.4f}, Test Recall: {recall_test:.4f} \n')
+    
     file_test.close()
     file_train.close()
             
     
 
-
-
 if __name__ == "__main__":
     options=[True,True,True]
-    data_name='fda'
+    data_name='bace'
     main(data_name,options)
     

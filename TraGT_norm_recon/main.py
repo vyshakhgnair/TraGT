@@ -1,4 +1,4 @@
-from load_data import load_data, load_data_long,CustomDataset,adj_list_to_adj_matrix
+from load_data import  load_data_long,CustomDataset,adj_list_to_adj_matrix
 import torch
 from torch_geometric.data import Data
 from seq_models import TransformerModel
