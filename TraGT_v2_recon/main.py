@@ -210,6 +210,6 @@ def main(data_name,options,type="recon"):
 
 if __name__ == "__main__":
     options=[True,True,True]
-    data_name='bace_recon'
+    data_name='logp'
     main(data_name,options,type="recon")
     
