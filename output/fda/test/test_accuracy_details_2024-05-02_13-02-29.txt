@@ -1,0 +1,4 @@
+Epoch 1/100, Test Accuracy: 81.1146,Test AUC-ROC: 0.8903, Test F1 Score: 0.8179, Test Precision: 0.8253, Test Recall: 0.8107 
+Epoch 2/100, Test Accuracy: 86.9969,Test AUC-ROC: 0.9288, Test F1 Score: 0.8820, Test Precision: 0.8396, Test Recall: 0.9290 
+Epoch 3/100, Test Accuracy: 89.4737,Test AUC-ROC: 0.9331, Test F1 Score: 0.9006, Test Precision: 0.8902, Test Recall: 0.9112 
+Epoch 4/100, Test Accuracy: 91.3313,Test AUC-ROC: 0.9484, Test F1 Score: 0.9176, Test Precision: 0.9123, Test Recall: 0.9231 

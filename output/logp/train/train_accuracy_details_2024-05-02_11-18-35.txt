@@ -1,0 +1,13 @@
+Epoch 1/100, Train Loss: 3013.0991, Train Accuracy: 80.9875, Train AUC-ROC: 0.9094, Train F1 Score: 0.7842 , Train Precision: 0.9101, Train Recall: 0.6889
+Epoch 2/100, Train Loss: 2001.7572, Train Accuracy: 88.8875, Train AUC-ROC: 0.9614, Train F1 Score: 0.8820 , Train Precision: 0.9435, Train Recall: 0.8280
+Epoch 3/100, Train Loss: 1857.8312, Train Accuracy: 89.6375, Train AUC-ROC: 0.9667, Train F1 Score: 0.8906 , Train Precision: 0.9464, Train Recall: 0.8410
+Epoch 4/100, Train Loss: 1775.2425, Train Accuracy: 90.2500, Train AUC-ROC: 0.9694, Train F1 Score: 0.8975 , Train Precision: 0.9494, Train Recall: 0.8509
+Epoch 5/100, Train Loss: 1767.6777, Train Accuracy: 90.4875, Train AUC-ROC: 0.9694, Train F1 Score: 0.9002 , Train Precision: 0.9502, Train Recall: 0.8552
+Epoch 6/100, Train Loss: 1727.8346, Train Accuracy: 90.1625, Train AUC-ROC: 0.9704, Train F1 Score: 0.8965 , Train Precision: 0.9485, Train Recall: 0.8500
+Epoch 7/100, Train Loss: 1711.5646, Train Accuracy: 90.7125, Train AUC-ROC: 0.9712, Train F1 Score: 0.9026 , Train Precision: 0.9516, Train Recall: 0.8584
+Epoch 8/100, Train Loss: 1678.0975, Train Accuracy: 91.1000, Train AUC-ROC: 0.9721, Train F1 Score: 0.9068 , Train Precision: 0.9545, Train Recall: 0.8637
+Epoch 9/100, Train Loss: 1662.5711, Train Accuracy: 91.2500, Train AUC-ROC: 0.9726, Train F1 Score: 0.9085 , Train Precision: 0.9549, Train Recall: 0.8664
+Epoch 10/100, Train Loss: 1665.1519, Train Accuracy: 91.0875, Train AUC-ROC: 0.9728, Train F1 Score: 0.9066 , Train Precision: 0.9558, Train Recall: 0.8622
+Epoch 11/100, Train Loss: 1661.3550, Train Accuracy: 90.9750, Train AUC-ROC: 0.9727, Train F1 Score: 0.9056 , Train Precision: 0.9524, Train Recall: 0.8632
+Epoch 12/100, Train Loss: 1627.5603, Train Accuracy: 91.4500, Train AUC-ROC: 0.9738, Train F1 Score: 0.9106 , Train Precision: 0.9569, Train Recall: 0.8686
+Epoch 13/100, Train Loss: 1593.2003, Train Accuracy: 91.4750, Train AUC-ROC: 0.9744, Train F1 Score: 0.9109 , Train Precision: 0.9574, Train Recall: 0.8686

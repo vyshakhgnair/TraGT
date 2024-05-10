@@ -1,0 +1,6 @@
+Epoch 1/100, Test Accuracy: 59.8684,Test AUC-ROC: 0.5822, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000 
+Epoch 2/100, Test Accuracy: 59.8684,Test AUC-ROC: 0.5534, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000 
+Epoch 3/100, Test Accuracy: 59.8684,Test AUC-ROC: 0.4841, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000 
+Epoch 4/100, Test Accuracy: 59.8684,Test AUC-ROC: 0.5918, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000 
+Epoch 5/100, Test Accuracy: 59.8684,Test AUC-ROC: 0.6037, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000 
+Epoch 6/100, Test Accuracy: 59.8684,Test AUC-ROC: 0.4727, Test F1 Score: 0.0000, Test Precision: 0.0000, Test Recall: 0.0000 

@@ -1,0 +1,1 @@
+Epoch 1/100, Train Loss: 842.9452, Train Accuracy: 54.3802, Train AUC-ROC: 0.5544, Train F1 Score: 0.2333 , Train Precision: 0.5714, Train Recall: 0.1466
