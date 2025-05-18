@@ -43,8 +43,11 @@ Place your dataset files in the `input/` directory. Ensure the dataset is format
 
 To reproduce the results, navigate to the desired version directory (e.g., `TraGT_v4_new_arch`) and run the `main.py` script in the terminal:
 
+
+Then execute the script:
+
 ```bash
-python main.py
+python src/TraGT_v3/main.py
 ```
 
 ### 3. Provide Arguments

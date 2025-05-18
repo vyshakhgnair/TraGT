@@ -10,7 +10,6 @@ class Graph_Transformer(nn.Module):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.conv1 = TransformerConv(in_channels, hidden_channels, heads)
         self.conv2 = TransformerConv(hidden_channels * heads, hidden_channels, heads)
-
     def forward(self, data):
         x, edge_index = data.x, data.edge_index
         x=x.to(self.device)

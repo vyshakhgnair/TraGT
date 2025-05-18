@@ -14,7 +14,7 @@ from rdkit import Chem
 from rdkit.Chem.rdmolops import GetAdjacencyMatrix
 
 def load_data(dataset, device):
-    data_file = f"./original_datasets/{dataset}/{dataset}_train"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_train"
     file = open(data_file, "r")
     node_types = set()
     label_types = set()
@@ -32,7 +32,7 @@ def load_data(dataset, device):
     file.close()
 
     te_len = 0
-    data_file = f"./original_datasets/{dataset}/{dataset}_test"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_test"
     file = open(data_file, "r")
     for line in file:
         te_len += 1
@@ -55,7 +55,7 @@ def load_data(dataset, device):
     #print(node2index)
     #print(label2index)
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_train"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_train"
     file = open(data_file, "r")
     train_adjlists = []
     train_features = []
@@ -96,7 +96,7 @@ def load_data(dataset, device):
         train_sequence.append(torch.tensor(smiles_seq))
     file.close()
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_test"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_test"
     file = open(data_file, "r")
     test_adjlists = []
     test_features = []
@@ -164,7 +164,7 @@ def load_data_long(dataset, device):
 
     pair_list = ["Br", "Cl", "Si", "Na", "Ca", "Ge", "Cu", "Au", "Sn", "Tb", "Pt", "Re", "Ru", "Bi", "Li", "Fe", "Sb", "Hg","Pb", "Se", "Ag","Cr","Pd","Ga","Mg","Ni","Ir","Rh","Te","Ti","Al","Zr","Tl"]
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_train"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_train"
     file = open(data_file, "r")
     node_types = set()
     label_types = set()
@@ -187,7 +187,7 @@ def load_data_long(dataset, device):
     file.close()
 
     te_len = 0
-    data_file = f"./original_datasets/{dataset}/{dataset}_test"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_test"
     file = open(data_file, "r")
     for line in file:
         te_len += 1
@@ -215,7 +215,7 @@ def load_data_long(dataset, device):
     #print(node2index)
     #print(label2index)
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_train"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_train"
     file = open(data_file, "r")
     train_adjlists = []
     train_features = []
@@ -284,7 +284,7 @@ def load_data_long(dataset, device):
         train_sequence.append(torch.tensor(smiles_seq))
     file.close()
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_test"
+    data_file = f"./data/original_datasets/{dataset}/{dataset}_test"
     file = open(data_file, "r")
     test_adjlists = []
     test_features = []

@@ -164,7 +164,7 @@ def load_data_long(dataset, device):
 
     pair_list = ["Br", "Cl", "Si", "Na", "Ca", "Ge", "Cu", "Au", "Sn", "Tb", "Pt", "Re", "Ru", "Bi", "Li", "Fe", "Sb", "Hg","Pb", "Se", "Ag","Cr","Pd","Ga","Mg","Ni","Ir","Rh","Te","Ti","Al","Zr","Tl"]
 
-    data_file = f"./original_datasets/{dataset}/{dataset}_train"
+    data_file = f".data/original_datasets/{dataset}/{dataset}_train"
     file = open(data_file, "r")
     node_types = set()
     label_types = set()

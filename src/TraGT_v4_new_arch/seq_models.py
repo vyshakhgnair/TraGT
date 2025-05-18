@@ -23,6 +23,7 @@ class TransformerModel(nn.Module):
         )
         self.transformer_encoder = TransformerEncoder(encoder_layer, num_layers=num_layers)
         self.decoder = TransformerDecoder(embedding_dim, hidden_dim, 128)
+        self.hidden_size = hidden_dim
 
     def forward(self, x):
         encoded = self.transformer_encoder(x).to(self.device)
